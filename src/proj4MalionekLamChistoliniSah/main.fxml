@@ -1,0 +1,63 @@
+<!-- /**
+ * File: main.fxml
+ * Names: Alex Skrynnyk, Mike Remondi, Vivek Sah, Edward Zhou
+ * Class: CS361
+ * Project: 3
+ * Date: October 2, 2016
+ */ -->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import proj3RemondiSkrynnykSahZhou.CompositionPanel?>
+<?import javafx.scene.layout.BorderPane?>
+<BorderPane xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <MenuBar id="menuBar">
+            <menus>
+                <Menu id="fileMenu" text="File">
+                    <items>
+                        <MenuItem
+                                id="menuExitItem"
+                                onAction="#cleanUpOnExit"
+                                accelerator="Meta+Q">
+                            <text>
+                                Exit
+                            </text>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu
+                        id="actionMenu"
+                        text="Action">
+                    <items>
+                        <MenuItem
+                                id="playMenu"
+                                onAction="#playComposition"
+                                accelerator="Meta+P">
+                            <text>
+                                Play
+                            </text>
+                        </MenuItem>
+                        <MenuItem
+                                id="stopMenu"
+                                onAction="#stopComposition"
+                                accelerator="Meta+S">
+                            <text>
+                                Stop
+                            </text>
+                        </MenuItem>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <center>
+        <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="ALWAYS">
+            <CompositionPanel fx:id="compositionPanel"
+                              onMouseClicked="#handleMouseClick">
+            </CompositionPanel>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
