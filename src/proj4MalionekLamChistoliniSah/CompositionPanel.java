@@ -7,7 +7,7 @@
  * Date: October 2, 2016
  */
 
-package proj3RemondiSkrynnykSahZhou;
+package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;

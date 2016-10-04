@@ -8,7 +8,7 @@
  */
 
 
-package proj3RemondiSkrynnykSahZhou;
+package proj4MalionekLamChistoliniSah;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
