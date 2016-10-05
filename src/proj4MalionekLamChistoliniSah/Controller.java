@@ -1,9 +1,8 @@
 /**
- * File: Controller.java
- * Names: Alex Skrynnyk, Mike Remondi, Vivek Sah, Edward Zhou
+ * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
  * Class: CS361
- * Project: 3
- * Date: October 2, 2016
+ * Project: 4
+ * Date: October 11, 2016
  */
 
 package proj4MalionekLamChistoliniSah;

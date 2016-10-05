@@ -2,7 +2,7 @@
  * File: MidiPlayer.java
  * Names: Dale Skrien
  * Class: CS361 
- * Project: 2
+ * Project: 4
  * Date: September 6, 2016
  */
 

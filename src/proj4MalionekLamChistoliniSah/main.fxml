@@ -32,7 +32,7 @@
     <left>
         <VBox spacing="15.0">
             <children>
-                <RadioButton text="Piano" textFill="grey" />
+                <RadioButton text="Piano" textFill="grey" selected="true"/>
                 <RadioButton text="Harpsicord" textFill="green" />
                 <RadioButton text="Marimba" textFill="blue"/>
                 <RadioButton text="Church organ" textFill="gold"/>
