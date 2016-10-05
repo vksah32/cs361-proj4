@@ -1,61 +1,55 @@
 <!-- /**
  * File: main.fxml
- * Names: Alex Skrynnyk, Mike Remondi, Vivek Sah, Edward Zhou
+ * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
  * Class: CS361
- * Project: 3
- * Date: October 2, 2016
+ * Project: 4
+ * Date: October 11, 2016
  */ -->
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.GridPane?>
 <?import proj4MalionekLamChistoliniSah.CompositionPanel?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
 <BorderPane xmlns:fx="http://javafx.com/fxml">
     <top>
-        <MenuBar id="menuBar">
-            <menus>
-                <Menu id="fileMenu" text="File">
-                    <items>
-                        <MenuItem
-                                id="menuExitItem"
-                                onAction="#cleanUpOnExit"
-                                accelerator="Meta+Q">
-                            <text>
-                                Exit
-                            </text>
-                        </MenuItem>
-                    </items>
-                </Menu>
-                <Menu
-                        id="actionMenu"
-                        text="Action">
-                    <items>
-                        <MenuItem
-                                id="playMenu"
-                                onAction="#playComposition"
-                                accelerator="Meta+P">
-                            <text>
-                                Play
-                            </text>
-                        </MenuItem>
-                        <MenuItem
-                                id="stopMenu"
-                                onAction="#stopComposition"
-                                accelerator="Meta+S">
-                            <text>
-                                Stop
-                            </text>
-                        </MenuItem>
-                    </items>
-                </Menu>
-            </menus>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Exit" onAction="#cleanUpOnExit" accelerator="Shortcut+Q"/>
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Select All" accelerator="Shortcut+A"/>
+                <MenuItem text="Delete" accelerator="Shortcut+DELETE"/>
+            </Menu>
+            <Menu text="Action">
+                <MenuItem text="Play" onAction="#playComposition" accelerator="Shortcut+P"/>
+                <MenuItem text="Stop" onAction="#stopComposition" accelerator="Shortcut+S"/>
+            </Menu>
         </MenuBar>
     </top>
 
+    <left>
+        <VBox spacing="15.0">
+            <children>
+                <RadioButton text="Piano" textFill="grey" />
+                <RadioButton text="Harpsicord" textFill="green" />
+                <RadioButton text="Marimba" textFill="blue"/>
+                <RadioButton text="Church organ" textFill="gold"/>
+                <RadioButton text="Accordion" textFill="purple"/>
+                <RadioButton text="Guitar" textFill="deepskyblue"/>
+                <RadioButton text="Violin" textFill="black"/>
+                <RadioButton text="French horn" textFill="sandybrown"/>
+            </children>
+            <padding>
+                <Insets top="10.0" />
+            </padding>
+        </VBox>
+    </left>
+
     <center>
-        <ScrollPane hbarPolicy="ALWAYS" vbarPolicy="ALWAYS">
-            <CompositionPanel fx:id="compositionPanel"
-                              onMouseClicked="#handleMouseClick">
+        <ScrollPane>
+            <CompositionPanel fx:id="compositionPanel" onMouseClicked="#handleMouseClick">
             </CompositionPanel>
         </ScrollPane>
     </center>
