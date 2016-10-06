@@ -34,6 +34,10 @@ public class Controller {
     private Line line;
     private TranslateTransition transition;
 
+    /**
+     * Gets the name of the instrument from the selected RadioButton
+     * @return instrument name
+     */
     @FXML
     public String getInstrument()
     {
@@ -43,8 +47,8 @@ public class Controller {
 
     /**
      * Handles mouse click events, extracts x,y coordinates
-     * relative to note, and creates a new note and adds it
-     * to the composition and compositionPanel.
+     * relative to note, gets the name of the instrument, and creates a new
+     * note and adds it to the composition and compositionPanel.
      *
      * @param event a mouse click event.
      */

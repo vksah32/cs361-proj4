@@ -49,7 +49,7 @@ public class Note {
     public int getTick() { return this.tick; }
 
     /**
-     * gets the instrument
+     * gets the instrument name
      * @return instrument number
      */
     public int getInstrument()
@@ -73,8 +73,8 @@ public class Note {
     }
 
     /**
-     * Creates a rectangle object with the appropriate style
-     * and coordinates.
+     * Creates a rectangle object with the appropriate style,
+     * coordinates and color.
      * @return the rectangle
      */
     public void generateRectangle(String inst) {

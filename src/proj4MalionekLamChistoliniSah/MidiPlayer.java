@@ -112,6 +112,8 @@ public class MidiPlayer
      *                      corresponds to a different instrument.  The default
      *                      instrument for all channels is the grand piano.
      * @param trackIndex an integer from 0 to 7 giving the track for the note
+     * @param instrument an integer from 0 to 127 giving the instrument
+     *
      */
     public void addNote(int pitch, int volume, int startTick, int duration,
                         int channel, int trackIndex, int instrument)
@@ -121,8 +123,7 @@ public class MidiPlayer
         addMidiEvent(ShortMessage.NOTE_OFF + channel, pitch, volume,
                 startTick + duration, trackIndex);
         addMidiEvent(ShortMessage.PROGRAM_CHANGE + channel, instrument, 0,
-                startTick,
-                trackIndex);
+                startTick, trackIndex);
     }
 
     /**
