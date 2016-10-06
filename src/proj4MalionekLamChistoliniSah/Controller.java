@@ -15,6 +15,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -31,11 +33,19 @@ public class Controller {
     @FXML public MenuBar menuBar;
     @FXML public Menu fileMenu;
     @FXML public Menu actionMenu;
+    @FXML public ToggleGroup instrumentPanel;
 
     private Composition composition = new Composition();
 
     private Line line;
     private TranslateTransition transition;
+
+    @FXML
+    public String getInstrument()
+    {
+        RadioButton b = (RadioButton)instrumentPanel.getSelectedToggle();
+        return (b.getText());
+    }
 
     /**
      * Handles mouse click events, extracts x,y coordinates
@@ -50,7 +60,9 @@ public class Controller {
         double x = event.getX();
         double y = event.getY();
 
-        Note note = this.composition.addNote(x, y);
+        String inst = getInstrument();
+
+        Note note = this.composition.addNote(x, y, inst);
         this.compositionPanel.addNoteRectangle(note.getRectangle());
     }
 

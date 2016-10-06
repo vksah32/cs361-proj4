@@ -28,10 +28,10 @@ public class Note {
      * @param pitch int value for the note pitch
      * @param tick int value for the tick pitch
      */
-    public Note(int pitch, int tick) {
+    public Note(int pitch, int tick, String inst) {
         this.pitch = pitch;
         this.tick = tick;
-        this.generateRectangle();
+        this.generateRectangle(inst);
     }
 
     /**
@@ -51,13 +51,29 @@ public class Note {
      * and coordinates.
      * @return the rectangle
      */
-    public void generateRectangle() {
+    public void generateRectangle(String inst) {
         Rectangle r = new Rectangle();
         r.setX(this.tick);
         r.setY(1280 - this.pitch * 10);
         r.setWidth(NOTE_DURATION);
         r.setHeight(10);
-        r.setFill(Color.BLUE);
+        if (inst.equals("Piano"))
+            r.setFill(Color.GREY);
+        else if (inst.equals("Harpsicord"))
+            r.setFill(Color.GREEN);
+        else if (inst.equals("Marimba"))
+            r.setFill(Color.BLUE);
+        else if (inst.equals("Organ"))
+            r.setFill(Color.GOLD);
+        else if (inst.equals("Accordion"))
+            r.setFill(Color.PURPLE);
+        else if (inst.equals("Guitar"))
+            r.setFill(Color.DEEPSKYBLUE);
+        else if (inst.equals("Violin"))
+            r.setFill(Color.BLACK);
+        else
+            r.setFill(Color.SANDYBROWN);
+
         r.setStroke(Color.BLACK);
         r.setStrokeWidth(1);
         this.rectangle = r;

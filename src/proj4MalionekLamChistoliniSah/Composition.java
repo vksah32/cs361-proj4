@@ -34,14 +34,14 @@ public class Composition {
      * @param y mouse y location
      * @return the created note object
      */
-    public Note addNote(double x, double y)
+    public Note addNote(double x, double y, String inst)
     {
         this.maxX = (x > maxX) ? x + Note.NOTE_DURATION : this.maxX;
 
         int tick = (int) x;
         int pitch = this.yToPitch(y);
 
-        Note note = new Note(pitch, tick);
+        Note note = new Note(pitch, tick, inst);
         this.composition.add(note);
 
         return note;
