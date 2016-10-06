@@ -13,8 +13,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
@@ -28,11 +26,7 @@ import javafx.util.Duration;
  */
 public class Controller {
 
-    @FXML
-    public CompositionPanel compositionPanel;
-    @FXML public MenuBar menuBar;
-    @FXML public Menu fileMenu;
-    @FXML public Menu actionMenu;
+    @FXML public CompositionPanel compositionPanel;
     @FXML public ToggleGroup instrumentPanel;
 
     private Composition composition = new Composition();

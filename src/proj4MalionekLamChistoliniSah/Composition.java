@@ -82,7 +82,8 @@ public class Composition {
     public void buildSequence(){
         for (Note note: this.composition){
             this.player.addNote(note.getPitch(), VOLUME, note.getTick(),
-                                Note.NOTE_DURATION, CHANNEL, TRACK_INDEX);
+                                Note.NOTE_DURATION, CHANNEL, TRACK_INDEX,
+                                note.getInstrument());
         }
     }
 

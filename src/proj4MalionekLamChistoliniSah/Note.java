@@ -19,6 +19,7 @@ public class Note {
     public static final int NOTE_DURATION = 100;
     private int pitch;
     private int tick;
+    private String inst;
 
     private Rectangle rectangle;
 
@@ -31,6 +32,7 @@ public class Note {
     public Note(int pitch, int tick, String inst) {
         this.pitch = pitch;
         this.tick = tick;
+        this.inst = inst;
         this.generateRectangle(inst);
     }
 
@@ -45,6 +47,30 @@ public class Note {
      * @return ticks
      */
     public int getTick() { return this.tick; }
+
+    /**
+     * gets the instrument
+     * @return instrument
+     */
+    public int getInstrument()
+    {
+        if (inst.equals("Piano"))
+            return 0;
+        else if (inst.equals("Harpsicord"))
+            return 6;
+        else if (inst.equals("Marimba"))
+            return 12;
+        else if (inst.equals("Organ"))
+            return 19;
+        else if (inst.equals("Accordion"))
+            return 21;
+        else if (inst.equals("Guitar"))
+            return 24;
+        else if (inst.equals("Violin"))
+            return 40;
+        else
+            return 60;
+    }
 
     /**
      * Creates a rectangle object with the appropriate style

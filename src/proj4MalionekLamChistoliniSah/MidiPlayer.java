@@ -114,12 +114,15 @@ public class MidiPlayer
      * @param trackIndex an integer from 0 to 7 giving the track for the note
      */
     public void addNote(int pitch, int volume, int startTick, int duration,
-                        int channel, int trackIndex)
+                        int channel, int trackIndex, int instrument)
     {
         addMidiEvent(ShortMessage.NOTE_ON + channel, pitch, volume,
                 startTick, trackIndex);
         addMidiEvent(ShortMessage.NOTE_OFF + channel, pitch, volume,
                 startTick + duration, trackIndex);
+        addMidiEvent(ShortMessage.PROGRAM_CHANGE + channel, instrument, 0,
+                startTick,
+                trackIndex);
     }
 
     /**
