@@ -50,23 +50,23 @@ public class Note {
 
     /**
      * gets the instrument
-     * @return instrument
+     * @return instrument number
      */
     public int getInstrument()
     {
-        if (inst.equals("Piano"))
+        if (this.inst.equals("Piano"))
             return 0;
-        else if (inst.equals("Harpsicord"))
+        else if (this.inst.equals("Harpsicord"))
             return 6;
-        else if (inst.equals("Marimba"))
+        else if (this.inst.equals("Marimba"))
             return 12;
-        else if (inst.equals("Organ"))
+        else if (this.inst.equals("Organ"))
             return 19;
-        else if (inst.equals("Accordion"))
+        else if (this.inst.equals("Accordion"))
             return 21;
-        else if (inst.equals("Guitar"))
+        else if (this.inst.equals("Guitar"))
             return 24;
-        else if (inst.equals("Violin"))
+        else if (this.inst.equals("Violin"))
             return 40;
         else
             return 60;
