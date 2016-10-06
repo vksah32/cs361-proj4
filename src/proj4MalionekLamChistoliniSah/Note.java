@@ -9,6 +9,8 @@
 
 package proj4MalionekLamChistoliniSah;
 
+import javafx.event.EventHandler;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -20,6 +22,8 @@ public class Note {
     private int pitch;
     private int tick;
     private String inst;
+    private double orgSceneX, orgSceneY;
+    private double orgTranslateX, orgTranslateY;
 
     private Rectangle rectangle;
 
@@ -102,6 +106,10 @@ public class Note {
 
         r.setStroke(Color.BLACK);
         r.setStrokeWidth(1);
+        r.setOnMouseDragged(rectOnMouseDraggedEventHandler);
+        r.setOnMousePressed(rectOnMousePressedEventHandler);
+
+        r.setOnMouseReleased(rectOnMouseDragReleasedHandler);
         this.rectangle = r;
     }
 
@@ -110,4 +118,75 @@ public class Note {
      * @return rectangle
      */
     public Rectangle getRectangle() { return this.rectangle; }
+
+
+    EventHandler<MouseEvent> rectOnMousePressedEventHandler =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+                    orgSceneX = t.getSceneX();
+                    orgSceneY = t.getSceneY();
+                    orgTranslateX = ((Rectangle)(t.getSource())).getTranslateX();
+                    orgTranslateY = ((Rectangle)(t.getSource())).getTranslateY();
+                }
+            };
+
+    public boolean inResizableZone(Rectangle r , MouseEvent t){
+        System.out.println("mouse X "+ t.getSceneX() + " rec X =" + r.getX());
+        return  ((r.getX() < t.getSceneX() && t.getSceneX() < r.getX() + 0.2*r.getWidth() ) ||
+                (  t.getSceneX() < (r.getX() + r.getWidth()) && t.getSceneX() > r.getX() + 0.2*r.getWidth() ));
+
+
+    }
+    EventHandler<MouseEvent> rectOnMouseDraggedEventHandler =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+
+                    double offsetX = t.getSceneX() - orgSceneX;
+                    double offsetY = t.getSceneY() - orgSceneY;
+                    double newTranslateX = orgTranslateX + offsetX;
+                    double newTranslateY = orgTranslateY + offsetY;
+                    double adjustedY = 1280 - Composition.yToPitch(newTranslateY)*10;
+                    Rectangle r = ((Rectangle)(t.getSource()));
+//                    if (! inResizableZone(((Rectangle)(t.getSource())), t)){
+                    r.setTranslateX(newTranslateX);
+//                        r.setX(r.getX()+ newTranslateX);
+
+
+                    ((Rectangle)(t.getSource())).setTranslateY(adjustedY);
+//                        r.setY(r.getY()+ adjustedY);
+
+
+//                    } else {
+//                        System.out.println("resize mode");
+//                    }
+
+
+                }
+            };
+
+    EventHandler<MouseEvent> rectOnMouseDragReleasedHandler =
+            new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent t) {
+                    if (! t.isStillSincePress()) {
+                        System.out.println("drag released");
+//                        Rectangle r = ((Rectangle) (t.getSource()));
+//                        r.setX(r.getX() + r.getTranslateX());
+//                        r.setY(r.getY() + r.getTranslateY());
+                    }
+                }
+
+
+            };
+
+
 }
+
+
+
+

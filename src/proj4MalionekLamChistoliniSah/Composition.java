@@ -52,7 +52,7 @@ public class Composition {
      * @param y mouse y location
      * @return the int value of pitch
      */
-    public int yToPitch(double y) {
+    public static int yToPitch(double y) {
         int ones = (int) y % 10;
         int yWithNoOnes = (int) (y - ones);
         int pitch = 128 - yWithNoOnes/10;

@@ -55,13 +55,16 @@ public class Controller {
     @FXML
     public void handleMouseClick(MouseEvent event)
     {
-        double x = event.getX();
-        double y = event.getY();
+        if(event.isStillSincePress()) { //differentiate from drag and drop
 
-        String inst = getInstrument();
+            double x = event.getX();
+            double y = event.getY();
 
-        Note note = this.composition.addNote(x, y, inst);
-        this.compositionPanel.addNoteRectangle(note.getRectangle());
+            String inst = getInstrument();
+
+            Note note = this.composition.addNote(x, y, inst);
+            this.compositionPanel.addNoteRectangle(note.getRectangle());
+        }
     }
 
     /**
