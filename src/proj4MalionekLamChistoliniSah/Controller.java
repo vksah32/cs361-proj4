@@ -100,7 +100,7 @@ public class Controller {
             @Override
             public void handle(ActionEvent event) {
                 compositionPanel.getChildren().remove(line);
-            }
+            } 
         });
         //this.composition.buildSequence();
     }
