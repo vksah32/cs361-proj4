@@ -18,7 +18,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
+
+import java.util.ArrayList;
 
 /**
  * Handles all user GUI interactions and coordinates with the MidiPlayer
@@ -29,10 +32,27 @@ public class Controller {
     @FXML public CompositionPanel compositionPanel;
     @FXML public ToggleGroup instrumentPanel;
 
-    private Composition composition = new Composition();
+    private Composition composition;
+
+    private ClickInPanelHandler clickInPanelHandler;
+    private ClickInNoteHandler clickInNoteHandler;
+    private DragInNoteHandler dragInNoteHandler;
+    private DragInPanelHandler dragInPanelHandler;
 
     private Line line;
     private TranslateTransition transition;
+
+
+
+    @FXML
+    public void initialize(){
+        this.composition = new Composition();
+        this.clickInPanelHandler = new ClickInPanelHandler(this.compositionPanel);
+        this.clickInNoteHandler = new ClickInNoteHandler(this.compositionPanel);
+        this.dragInNoteHandler = new DragInNoteHandler(this.compositionPanel);
+        this.dragInPanelHandler = new DragInPanelHandler(this.compositionPanel);
+    }
+
 
     /**
      * Gets the name of the instrument from the selected RadioButton
@@ -56,14 +76,9 @@ public class Controller {
     public void handleMouseClick(MouseEvent event)
     {
         if(event.isStillSincePress()) { //differentiate from drag and drop
-
-            double x = event.getX();
-            double y = event.getY();
-
-            String inst = getInstrument();
-
-            Note note = this.composition.addNote(x, y, inst);
-            this.compositionPanel.addNoteRectangle(note.getRectangle());
+            if(event.getSource() == this.compositionPanel) {
+                this.clickInPanelHandler.handle(event,this.getInstrument());
+            }
         }
     }
 
@@ -72,14 +87,13 @@ public class Controller {
      * and begins the animation based on the length
      * of the composition.
      */
-    public void beginAnimation(){
+    public void beginAnimation(double maxX){
         this.line = new Line(0, 0, 0, 1280);
         this.line.setStroke(Color.RED);
         this.compositionPanel.getChildren().add(this.line);
         this.line.setStrokeWidth(1);
-        this.transition = new TranslateTransition(new Duration(
-                this.composition.getMaxX() * 10), this.line);
-        this.transition.setToX(this.composition.getMaxX());
+        this.transition = new TranslateTransition(new Duration(maxX * 10), this.line);
+        this.transition.setToX(maxX);
         this.transition.setInterpolator(Interpolator.LINEAR);
         this.transition.play();
         this.transition.setOnFinished(new EventHandler<ActionEvent>() {
@@ -88,7 +102,7 @@ public class Controller {
                 compositionPanel.getChildren().remove(line);
             }
         });
-        this.composition.buildSequence();
+        //this.composition.buildSequence();
     }
 
     /**
@@ -107,11 +121,23 @@ public class Controller {
     @FXML
     public void playComposition() {
         if (this.transition != null) {
-            this.stopComposition();
+            this.composition.stop();
         }
-        if(this.composition.getComposition().size() > 0){
-            this.beginAnimation();
-            this.composition.getPlayer().play();
+
+        if(this.compositionPanel.getRectangles().size() > 0){
+            System.out.println("DO WE GO HERE?");
+            double maxX = 0;
+            ArrayList<NoteRectangle> rectangles = compositionPanel.getRectangles();
+            for(NoteRectangle rectangle: rectangles){
+                maxX = Math.max(maxX,rectangle.getX()+rectangle.getWidth());
+                int startTick = (int)rectangle.getX();
+                int pitch = (int)rectangle.getY()/10;
+                int duration = (int)rectangle.getWidth();
+                int instrument = rectangle.getInstrument();
+                this.composition.addNote(startTick,duration,pitch,instrument);
+            }
+            this.beginAnimation(maxX);
+            this.composition.play();
         }
     }
 
@@ -125,8 +151,7 @@ public class Controller {
         if (this.transition != null) {
             this.stopAnimation();
         }
-        this.composition.getPlayer().stop();
-        this.composition.getPlayer().clear();
+        this.composition.stop();
     }
 
     /**

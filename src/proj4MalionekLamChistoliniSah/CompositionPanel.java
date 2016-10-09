@@ -14,11 +14,16 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
+import java.util.ArrayList;
+
 /**
  * Extends the Pane class and is the parent node of
  * all of composition notes and lines.
  */
 public class CompositionPanel extends Pane {
+
+    ArrayList<NoteRectangle> rectangles;
+    ArrayList<NoteRectangle> selectedRectangles;
 
     /**
      * Constructs the Panel and draws the appropriate lines.
@@ -26,6 +31,17 @@ public class CompositionPanel extends Pane {
     public CompositionPanel()
     {
         this.drawLines();
+        rectangles = new ArrayList<>();
+        selectedRectangles = new ArrayList<>();
+    }
+
+
+    public void addRectangle(NoteRectangle rectangle, boolean selected){
+        this.getChildren().add(rectangle);
+        rectangles.add(rectangle);
+        if(selected){
+            selectedRectangles.add(rectangle);
+        }
     }
 
     /**
@@ -43,12 +59,9 @@ public class CompositionPanel extends Pane {
         }
     }
 
-    /**
-     * Adds a rectangle for the note.
-     *
-     * @param note a rectangle from the Note object.
-     */
-    public void addNoteRectangle(Rectangle note) {
-        this.getChildren().add(note);
+    public ArrayList<NoteRectangle> getRectangles(){
+        return this.rectangles;
     }
+
+
 }
