@@ -79,7 +79,22 @@ public class Controller {
             if(event.getSource() == this.compositionPanel) {
                 this.clickInPanelHandler.handle(event,this.getInstrument());
             }
+            else if (event.getSource() instanceof NoteRectangle){
+                this.clickInNoteHandler.handle(event);
+            }
         }
+    }
+
+
+    @FXML
+    public void handleDragDetected(MouseEvent event){
+        if(event.getSource()==this.compositionPanel) {
+            this.dragInPanelHandler.handleDragDetected(event);
+        }
+        else if(event.getSource() instanceof NoteRectangle){
+            this.dragInNoteHandler.handleDragDetected(event);
+        }
+
     }
 
     /**
@@ -100,7 +115,7 @@ public class Controller {
             @Override
             public void handle(ActionEvent event) {
                 compositionPanel.getChildren().remove(line);
-            } 
+            }
         });
         //this.composition.buildSequence();
     }

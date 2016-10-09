@@ -1,5 +1,7 @@
 package proj4MalionekLamChistoliniSah;
 
+import javafx.scene.input.MouseEvent;
+
 /**
  * Created by joseph on 10/9/16.
  */
@@ -9,5 +11,8 @@ public class DragInNoteHandler {
 
     public DragInNoteHandler(CompositionPanel panelToEdit){
         this.panelToEdit = panelToEdit;
+    }
+
+    public void handleDragDetected(MouseEvent event) {
     }
 }
