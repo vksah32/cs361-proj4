@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="94319672-0723-4afc-b326-42793b272a9a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInNoteHandler.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInNoteHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/NoteRectangle.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/NoteRectangle.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml" />
     </list>
     <ignored path="CS361-proj4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +52,8 @@
       <file leaf-file-name="DragInNoteHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,15 +64,15 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClickInPanelHandler.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/ClickInPanelHandler.class">
+      <file leaf-file-name="Controller.class" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/Controller.class">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -101,34 +94,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
+            <state relative-caret-position="214">
+              <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
               <folding>
-                <element signature="e#0#5689#0" expanded="true" />
+                <element signature="e#0#5735#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="e#2570#2571#0" expanded="true" />
+                <element signature="e#2635#2636#0" expanded="true" />
+                <element signature="e#2695#2696#0" expanded="true" />
+                <element signature="e#2750#2751#0" expanded="true" />
+                <element signature="e#2815#2816#0" expanded="true" />
+                <element signature="e#2875#2876#0" expanded="true" />
+                <element signature="e#3614#3615#0" expanded="true" />
+                <element signature="e#3689#3690#0" expanded="true" />
+                <element signature="e#5676#5677#0" expanded="true" />
+                <element signature="e#5730#5731#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClickInPanelHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClickInPanelHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+            <state relative-caret-position="435">
+              <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#377#378#0" expanded="true" />
@@ -158,11 +151,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -173,7 +161,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java" />
+        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" />
       </list>
     </option>
   </component>
@@ -291,7 +279,7 @@
       </pane>
     </panes>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -378,89 +366,29 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="false" name="Unnamed" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="proj4MalionekLamChistoliniSah.Main" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="CS361-proj4" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="94319672-0723-4afc-b326-42793b272a9a" name="Default" comment="" />
-      <created>1475620121878</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1475620121878</updated>
-    </task>
-    <task id="LOCAL-00001" summary="fxml">
-      <created>1475642121585</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1475642121585</updated>
-    </task>
-    <task id="LOCAL-00002" summary="edited file headers">
-      <created>1475642607279</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1475642607279</updated>
-    </task>
-    <task id="LOCAL-00003" summary="edited toggle group selection and changed rectangle colors depending on instrument">
-      <created>1475722394933</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1475722394933</updated>
-    </task>
-    <task id="LOCAL-00004" summary="added different instrument sounds">
-      <created>1475723468722</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1475723468722</updated>
-    </task>
-    <task id="LOCAL-00005" summary="minor change">
-      <created>1475723888789</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1475723888789</updated>
-    </task>
-    <task id="LOCAL-00006" summary="minor change">
-      <created>1476047431336</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1476047431336</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Actually redesigned and recoded entire last project on previous commit, the last commit was a ruse">
-      <created>1476047512855</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1476047512855</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Added a little more to the control class so that it handles drag events better (hopfully)">
-      <created>1476049254693</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1476049254694</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Got extending rectangles to work">
-      <created>1476129083451</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1476129083451</updated>
-    </task>
-    <task id="LOCAL-00010" summary="started doing stuff">
-      <created>1476141086956</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1476141086956</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -502,18 +430,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="fxml" />
-    <MESSAGE value="edited file headers" />
-    <MESSAGE value="edited toggle group selection and changed rectangle colors depending on instrument" />
-    <MESSAGE value="added different instrument sounds" />
-    <MESSAGE value="minor change" />
-    <MESSAGE value="Actually redesigned and recoded entire last project on previous commit, the last commit was a ruse" />
-    <MESSAGE value="Added a little more to the control class so that it handles drag events better (hopfully)" />
-    <MESSAGE value="Got extending rectangles to work" />
-    <MESSAGE value="started doing stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="started doing stuff" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
@@ -523,17 +439,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#5689#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -591,8 +496,18 @@
         <state relative-caret-position="30">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <element signature="e#0#5689#0" expanded="true" />
+            <element signature="e#0#5735#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2695#2696#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5730#5731#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -641,8 +556,18 @@
         <state relative-caret-position="0">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <element signature="e#0#5689#0" expanded="true" />
+            <element signature="e#0#5735#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2695#2696#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5730#5731#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -717,8 +642,18 @@
         <state relative-caret-position="225">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
           <folding>
-            <element signature="e#0#5689#0" expanded="true" />
+            <element signature="e#0#5735#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2695#2696#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5730#5731#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,8 +696,18 @@
         <state relative-caret-position="30">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
-            <element signature="e#0#5689#0" expanded="true" />
+            <element signature="e#0#5735#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2695#2696#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5730#5731#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -894,17 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="54" column="80" selection-start-line="54" selection-start-column="80" selection-end-line="54" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#5689#0" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -913,10 +847,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/ClickInPanelHandler.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="32" column="65" selection-start-line="32" selection-start-column="65" selection-end-line="32" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#377#378#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -925,13 +879,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/ClickInPanelHandler.class">
+    <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/Controller.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -939,14 +893,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="48" column="54" selection-start-line="48" selection-start-column="54" selection-end-line="48" selection-end-column="54" />
+        <state relative-caret-position="214">
+          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
           <folding>
+            <element signature="e#0#5735#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
+            <element signature="e#2570#2571#0" expanded="true" />
+            <element signature="e#2635#2636#0" expanded="true" />
+            <element signature="e#2695#2696#0" expanded="true" />
+            <element signature="e#2750#2751#0" expanded="true" />
+            <element signature="e#2815#2816#0" expanded="true" />
+            <element signature="e#2875#2876#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3689#3690#0" expanded="true" />
+            <element signature="e#5676#5677#0" expanded="true" />
+            <element signature="e#5730#5731#0" expanded="true" />
           </folding>
         </state>
       </provider>
