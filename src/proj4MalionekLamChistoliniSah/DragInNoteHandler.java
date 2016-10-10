@@ -59,7 +59,7 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
         double deltaX = event.getX()-this.startX;
         double deltaY = event.getY()-this.startY;
         for(NoteRectangle rectangle:selectedRectangles){
-            
+
         }
     }
 

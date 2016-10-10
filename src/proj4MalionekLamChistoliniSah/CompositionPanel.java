@@ -89,5 +89,22 @@ public class CompositionPanel extends Pane {
         return false;
     }
 
+    /**
+     * removes the selected rectangles
+     */
+    public void deleteSelectedNotes(){
+
+        ArrayList<NoteRectangle> rectangles = this.getSelectedRectangles();
+        for (NoteRectangle r: rectangles){ //first remove from the panel
+            this.getChildren().remove(r);
+        }
+        this.rectangles.removeAll(rectangles); //then remove from Arraylist of rectangles
+    }
+
+    public void selectAllNotes(){
+        for (NoteRectangle r: this.rectangles){
+            r.setSelected(true);
+        }
+    }
 
 }

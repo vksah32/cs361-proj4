@@ -20,8 +20,8 @@
                 <MenuItem text="Exit" onAction="#cleanUpOnExit" accelerator="Shortcut+Q"/>
             </Menu>
             <Menu text="Edit">
-                <MenuItem text="Select All" accelerator="Shortcut+A"/>
-                <MenuItem text="Delete" accelerator="Shortcut+DELETE"/>
+                <MenuItem text="Select All" onAction="#selectAllNotes" accelerator="Shortcut+A"/>
+                <MenuItem text="Delete" onAction="#deleteSelectedNotes" accelerator="Shortcut+BACKSPACE"/>
             </Menu>
             <Menu text="Action">
                 <MenuItem text="Play" onAction="#playComposition" accelerator="Shortcut+P"/>
@@ -40,7 +40,7 @@
                              textFill="grey"
                              toggleGroup="$instrumentPanel"
                              selected="true"/>
-                <RadioButton text="Harpsicord"
+                <RadioButton text="Harpsichord"
                              textFill="green"
                              toggleGroup="$instrumentPanel"/>
                 <RadioButton text="Marimba"
