@@ -91,7 +91,6 @@ public class Controller {
         }
     }
 
-
     @FXML
     public void handleMousePressed(MouseEvent event){
         if(this.compositionPanel.inARectangle(event.getX(),event.getY())) {
@@ -204,6 +203,15 @@ public class Controller {
     {
         Platform.exit();
         System.exit(0);
+    }
+
+    public void deleteSelectedNotes(){
+        this.compositionPanel.deleteSelectedNotes();
+
+    }
+
+    public void selectAllNotes(){
+        this.compositionPanel.selectAllNotes();
     }
 
 }
