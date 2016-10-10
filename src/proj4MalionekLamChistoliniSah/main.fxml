@@ -21,7 +21,7 @@
             </Menu>
             <Menu text="Edit">
                 <MenuItem text="Select All" onAction="#selectAllNotes" accelerator="Shortcut+A"/>
-                <MenuItem text="Delete" onAction="#deleteSelectedNotes" accelerator="Shortcut+DELETE"/>
+                <MenuItem text="Delete" onAction="#deleteSelectedNotes" accelerator="Shortcut+BACKSPACE"/>
             </Menu>
             <Menu text="Action">
                 <MenuItem text="Play" onAction="#playComposition" accelerator="Shortcut+P"/>
