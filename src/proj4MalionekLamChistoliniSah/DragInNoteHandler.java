@@ -39,11 +39,12 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
 
 
     public void handleDragged(MouseEvent event) {
+        if (!this.sourceRectangle.isSelected()){
+            this.panelToEdit.clearSelected();
+            this.sourceRectangle.setSelected(true);
+        }
         if(this.startX>=this.sourceRectangle.getX()+this.startWidth-5){
-            if (!this.sourceRectangle.isSelected()){
-                this.panelToEdit.clearSelected();
-                this.sourceRectangle.setSelected(true);
-            }
+
             this.handleNoteExtend(event);
         }
         else{
@@ -54,7 +55,12 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
     }
 
     private void handleNoteTranslate(MouseEvent event){
-
+        ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
+        double deltaX = event.getX()-this.startX;
+        double deltaY = event.getY()-this.startY;
+        for(NoteRectangle rectangle:selectedRectangles){
+            
+        }
     }
 
     private void handleNoteExtend(MouseEvent event){
