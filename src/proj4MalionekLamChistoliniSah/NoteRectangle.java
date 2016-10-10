@@ -16,7 +16,7 @@ public class NoteRectangle extends Rectangle {
     }
 
     public void setInstrument(String instrument){
-        if (instrument.equals("Harpsicord")){
+        if (instrument.equals("Harpsichord")){
             this.setFill(Color.GREEN);
             this.instrument = 6;}
         else if (instrument.equals("Marimba")) {

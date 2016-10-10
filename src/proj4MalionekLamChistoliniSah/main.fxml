@@ -40,7 +40,7 @@
                              textFill="grey"
                              toggleGroup="$instrumentPanel"
                              selected="true"/>
-                <RadioButton text="Harpsicord"
+                <RadioButton text="Harpsichord"
                              textFill="green"
                              toggleGroup="$instrumentPanel"/>
                 <RadioButton text="Marimba"
