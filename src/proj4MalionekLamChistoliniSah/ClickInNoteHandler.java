@@ -8,13 +8,28 @@ import javafx.scene.input.MouseEvent;
  */
 public class ClickInNoteHandler implements EventHandler<MouseEvent> {
     private CompositionPanel compositionPanel;
+    private boolean metaDown;
 
     public ClickInNoteHandler (CompositionPanel compositionPanel){
         this.compositionPanel = compositionPanel;
     }
 
     public void handle(MouseEvent event) {
-        System.out.println("rectangle selected");
+//        this.metaDown = event.isShortcutDown();
+        NoteRectangle r = ((NoteRectangle)event.getSource());
+        if(event.isShortcutDown()){
+            if (r.isSelected()){
+                r.setSelected(false);
+            } else {
+                r.setSelected(true);
+            }
+        } else {
+            if (! r.isSelected()){
+                this.compositionPanel.clearSelected();
+                r.setSelected(true);
+            }
+        }
+
 
 
     }
