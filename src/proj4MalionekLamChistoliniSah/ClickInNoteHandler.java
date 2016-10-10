@@ -1,11 +1,12 @@
 package proj4MalionekLamChistoliniSah;
 
+import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 /**
  * Created by joseph on 10/9/16.
  */
-public class ClickInNoteHandler {
+public class ClickInNoteHandler implements EventHandler<MouseEvent> {
     private CompositionPanel compositionPanel;
 
     public ClickInNoteHandler (CompositionPanel compositionPanel){
@@ -13,6 +14,8 @@ public class ClickInNoteHandler {
     }
 
     public void handle(MouseEvent event) {
+        System.out.println("rectangle selected");
+
 
     }
 }

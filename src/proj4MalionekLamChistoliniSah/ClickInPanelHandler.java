@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 public class ClickInPanelHandler {
     CompositionPanel panelToEdit;
     private final int DEFAULT_RECTANGLE_WIDTH = 100;
+    private boolean isMetaDown;
 
 
     public ClickInPanelHandler(CompositionPanel panelToEdit){
@@ -16,7 +17,11 @@ public class ClickInPanelHandler {
     }
 
     public void handle(MouseEvent event, String instrument) {
-        addNote(event.getX(),event.getY(),instrument);
+        if  (! this.panelToEdit.inARectangle(event.getSceneX(),event.getSceneY())) {
+            isMetaDown = event.isShortcutDown();
+            addNote(event.getX(), event.getY(), instrument);
+        }
+
     }
 
     /**
@@ -33,8 +38,14 @@ public class ClickInPanelHandler {
         rectangle.setOnDragDetected(handler);
         rectangle.setOnMouseDragged(handler);
         rectangle.setOnMouseDragReleased(handler);
-        this.panelToEdit.clearSelected();
+        if (! isMetaDown) {
+            this.panelToEdit.clearSelected();
+        }
+        rectangle.setOnMouseClicked(new ClickInNoteHandler(this.panelToEdit));
         this.panelToEdit.addRectangle(rectangle,true);
 
+
     }
+
+
 }
