@@ -8,6 +8,7 @@ import javafx.scene.shape.Rectangle;
  */
 public class NoteRectangle extends Rectangle {
     private int instrument;
+    private boolean selected;
 
     public NoteRectangle(double x, double y, double width, double height, String instrument){
         super(x,y,width,height);
@@ -53,5 +54,19 @@ public class NoteRectangle extends Rectangle {
         return this.instrument;
     }
 
+    public boolean isSelected() {
+        return this.selected;
+    }
 
+    public void setSelected(boolean selected){
+        if(selected){
+            this.setStrokeWidth(3);
+            this.setStroke(Color.RED);
+        }
+        else{
+            this.setStrokeWidth(1);
+            this.setStroke(Color.BLACK);
+        }
+        this.selected = selected;
+    }
 }

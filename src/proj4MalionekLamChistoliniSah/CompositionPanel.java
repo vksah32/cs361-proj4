@@ -14,6 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +24,6 @@ import java.util.ArrayList;
 public class CompositionPanel extends Pane {
 
     ArrayList<NoteRectangle> rectangles;
-    ArrayList<NoteRectangle> selectedRectangles;
 
     /**
      * Constructs the Panel and draws the appropriate lines.
@@ -32,7 +32,6 @@ public class CompositionPanel extends Pane {
     {
         this.drawLines();
         rectangles = new ArrayList<>();
-        selectedRectangles = new ArrayList<>();
     }
 
 
@@ -40,7 +39,7 @@ public class CompositionPanel extends Pane {
         this.getChildren().add(rectangle);
         rectangles.add(rectangle);
         if(selected){
-            selectedRectangles.add(rectangle);
+            rectangle.setSelected(true);
         }
     }
 
@@ -61,6 +60,33 @@ public class CompositionPanel extends Pane {
 
     public ArrayList<NoteRectangle> getRectangles(){
         return this.rectangles;
+    }
+
+    public ArrayList<NoteRectangle> getSelectedRectangles(){
+        ArrayList<NoteRectangle> selectedList = new ArrayList<>();
+        for(NoteRectangle rectangle:this.rectangles){
+            if(rectangle.isSelected()){
+                selectedList.add(rectangle);
+            }
+        }
+        return selectedList;
+    }
+
+    public void clearSelected(){
+        for(NoteRectangle rectangle:this.rectangles){
+            if(rectangle.isSelected()){
+                rectangle.setSelected(false);
+            }
+        }
+    }
+
+    public boolean inARectangle(double x, double y){
+        for(NoteRectangle rectangle: this.rectangles){
+            if(rectangle.contains(x,y)){
+                return true;
+            }
+        }
+        return false;
     }
 
 

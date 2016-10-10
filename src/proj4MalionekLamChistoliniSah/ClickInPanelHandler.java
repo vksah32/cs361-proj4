@@ -29,6 +29,12 @@ public class ClickInPanelHandler {
     public void addNote(double x, double y, String instrument) {
         double pitch = Math.floor((y - 1) / 10) * 10 + 1;
         NoteRectangle rectangle = new NoteRectangle(x, pitch, this.DEFAULT_RECTANGLE_WIDTH, 10, instrument);
+        DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit);
+        rectangle.setOnDragDetected(handler);
+        rectangle.setOnMouseDragged(handler);
+        rectangle.setOnMouseDragReleased(handler);
+        this.panelToEdit.clearSelected();
         this.panelToEdit.addRectangle(rectangle,true);
+
     }
 }

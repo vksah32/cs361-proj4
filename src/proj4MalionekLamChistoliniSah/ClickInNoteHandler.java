@@ -13,5 +13,6 @@ public class ClickInNoteHandler {
     }
 
     public void handle(MouseEvent event) {
+
     }
 }

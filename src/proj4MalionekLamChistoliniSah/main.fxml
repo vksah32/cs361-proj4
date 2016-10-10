@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.shape.Rectangle?>
 <BorderPane xmlns:fx="http://javafx.com/fxml">
     <top>
         <MenuBar>
@@ -69,8 +70,11 @@
 
     <center>
         <ScrollPane>
-            <CompositionPanel fx:id="compositionPanel" onMouseClicked="#handleMouseClick">
-            </CompositionPanel>
+            <CompositionPanel fx:id="compositionPanel"
+                              onMouseClicked="#handleMouseClick"
+                              onMousePressed="#handleMousePressed"
+                              onMouseDragged="#handleDragged"
+                              onMouseReleased="#handleDragReleased"/>
         </ScrollPane>
     </center>
 

@@ -15,6 +15,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -42,6 +43,8 @@ public class Controller {
     private Line line;
     private TranslateTransition transition;
 
+    private boolean dragStartedInPanel;
+
 
 
     @FXML
@@ -51,6 +54,9 @@ public class Controller {
         this.clickInNoteHandler = new ClickInNoteHandler(this.compositionPanel);
         this.dragInNoteHandler = new DragInNoteHandler(this.compositionPanel);
         this.dragInPanelHandler = new DragInPanelHandler(this.compositionPanel);
+        //this.compositionPanel.addEventFilter(MouseEvent.DRAG_DETECTED, this::handleDragDetected);
+        //this.compositionPanel.addEventFilter(MouseEvent.MOUSE_DRAGGED, this::handleDragged);
+        //this.compositionPanel.addEventFilter(MouseEvent.MOUSE_RELEASED, this::handleDragReleased);
     }
 
 
@@ -87,14 +93,35 @@ public class Controller {
 
 
     @FXML
-    public void handleDragDetected(MouseEvent event){
-        if(event.getSource()==this.compositionPanel) {
-            this.dragInPanelHandler.handleDragDetected(event);
+    public void handleMousePressed(MouseEvent event){
+        if(this.compositionPanel.inARectangle(event.getX(),event.getY())) {
+            this.dragInNoteHandler.handleMousePressed(event);
+            this.dragStartedInPanel = false;
+            System.out.println("DO WE GO HERE");
         }
-        else if(event.getSource() instanceof NoteRectangle){
-            this.dragInNoteHandler.handleDragDetected(event);
+        else{
+            this.dragInPanelHandler.handleMousePressed(event);
+            this.dragStartedInPanel = true;
+        }
+    }
+
+    @FXML
+    public void handleDragged(MouseEvent event){
+        if(this.dragStartedInPanel){
+            dragInPanelHandler.handleDragOver(event);
         }
 
+    }
+
+    @FXML
+    public void handleDragReleased(MouseEvent event){
+
+        if(this.dragStartedInPanel){
+            dragInPanelHandler.handleDragReleased(event);
+        }
+        else{
+            dragInNoteHandler.handleDragReleased(event);
+        }
     }
 
     /**
@@ -140,7 +167,6 @@ public class Controller {
         }
 
         if(this.compositionPanel.getRectangles().size() > 0){
-            System.out.println("DO WE GO HERE?");
             double maxX = 0;
             ArrayList<NoteRectangle> rectangles = compositionPanel.getRectangles();
             for(NoteRectangle rectangle: rectangles){
