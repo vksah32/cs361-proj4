@@ -171,7 +171,7 @@ public class Controller {
             for(NoteRectangle rectangle: rectangles){
                 maxX = Math.max(maxX,rectangle.getX()+rectangle.getWidth());
                 int startTick = (int)rectangle.getX();
-                int pitch = (int)rectangle.getY()/10;
+                int pitch = 128 - (int)rectangle.getY()/10;
                 int duration = (int)rectangle.getWidth();
                 int instrument = rectangle.getInstrument();
                 this.composition.addNote(startTick,duration,pitch,instrument);

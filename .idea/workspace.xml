@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="94319672-0723-4afc-b326-42793b272a9a" name="Default" comment="added fxml delete/select all">
+    <list default="true" id="94319672-0723-4afc-b326-42793b272a9a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" afterPath="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" />
     </list>
     <ignored path="CS361-proj4.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,25 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Composition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Composition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
-                <element signature="e#967#968#0" expanded="true" />
-                <element signature="e#1001#1002#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CompositionPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
+            <state relative-caret-position="185">
               <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
               <folding />
             </state>
@@ -61,6 +47,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DragInNoteHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -73,14 +69,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="27" column="92" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MidiPlayer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,8 +96,11 @@
         <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
-              <folding />
+              <caret line="176" column="78" selection-start-line="176" selection-start-column="78" selection-end-line="176" selection-end-column="78" />
+              <folding>
+                <element signature="e#6591#6592#0" expanded="true" />
+                <element signature="e#6645#6646#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,7 +168,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$USER_HOME$/Desktop/proj4.fxml" />
-        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Note.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Main.java" />
@@ -169,13 +177,14 @@
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Composition.java" />
         <option value="$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/main.fxml" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/NoteRectangle.java" />
-        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInNoteHandler.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInPanelHandler.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPanelHandler.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInNoteHandler.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java" />
         <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/main.fxml" />
+        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java" />
+        <option value="$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java" />
       </list>
     </option>
   </component>
@@ -587,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476127518438</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="delete shortcut fxml">
+      <created>1476127896631</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1476127896631</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -640,7 +656,8 @@
     <MESSAGE value="Actually redesigned and recoded entire last project on previous commit, the last commit was a ruse" />
     <MESSAGE value="Added a little more to the control class so that it handles drag events better (hopfully)" />
     <MESSAGE value="added fxml delete/select all" />
-    <option name="LAST_COMMIT_MESSAGE" value="added fxml delete/select all" />
+    <MESSAGE value="delete shortcut fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete shortcut fxml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -651,19 +668,14 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="50" column="33" selection-start-line="50" selection-start-column="33" selection-end-line="50" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
           <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -720,7 +732,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -764,7 +779,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -834,7 +852,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -872,7 +893,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -907,22 +931,6 @@
     <entry file="file://$USER_HOME$/Desktop/proj4.fxml" />
     <entry file="file://$PROJECT_DIR$/.gitignore" />
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Note.java" />
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="84" column="48" selection-start-line="84" selection-start-column="44" selection-end-line="84" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickInPaneHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/ClickHandler.java" />
@@ -934,16 +942,6 @@
         <state relative-caret-position="267">
           <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInPanelHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1006,17 +1004,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
+    <entry file="file://$PROJECT_DIR$/out/production/CS361-proj4/proj4MalionekLamChistoliniSah/MidiPlayer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/DragInPanelHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/CompositionPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
+        <state relative-caret-position="185">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
           <folding />
         </state>
@@ -1027,8 +1035,35 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="27" column="92" selection-start-line="27" selection-start-column="92" selection-end-line="27" selection-end-column="92" />
+        <state relative-caret-position="465">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="176" column="78" selection-start-line="176" selection-start-column="78" selection-end-line="176" selection-end-column="78" />
+          <folding>
+            <element signature="e#6591#6592#0" expanded="true" />
+            <element signature="e#6645#6646#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/proj4MalionekLamChistoliniSah/MidiPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding />
         </state>
       </provider>
