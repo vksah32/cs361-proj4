@@ -17,7 +17,7 @@ public class ClickInPanelHandler {
     }
 
     public void handle(MouseEvent event, String instrument) {
-        if  (! this.panelToEdit.inARectangle(event.getSceneX(),event.getSceneY())) {
+        if  (! this.panelToEdit.inARectangle(event.getX(),event.getY())) {
             isMetaDown = event.isShortcutDown();
             addNote(event.getX(), event.getY(), instrument);
         }
