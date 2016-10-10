@@ -44,6 +44,7 @@ public class Controller {
     private TranslateTransition transition;
 
     private boolean dragStartedInPanel;
+    private boolean isPlaying;
 
 
 
@@ -82,11 +83,11 @@ public class Controller {
     public void handleMouseClick(MouseEvent event)
     {
         if(event.isStillSincePress()) { //differentiate from drag and drop
-            if(event.getSource() == this.compositionPanel) {
-                this.clickInPanelHandler.handle(event,this.getInstrument());
+            if (isPlaying) {
+                this.stopComposition();
             }
-            else if (event.getSource() instanceof NoteRectangle){
-                this.clickInNoteHandler.handle(event);
+            else {
+                this.clickInPanelHandler.handle(event,this.getInstrument());
             }
         }
     }
@@ -161,6 +162,8 @@ public class Controller {
      */
     @FXML
     public void playComposition() {
+        this.isPlaying = true;
+
         if (this.transition != null) {
             this.composition.stop();
         }
@@ -188,6 +191,8 @@ public class Controller {
     @FXML
     public void stopComposition()
     {
+        this.isPlaying = false;
+
         if (this.transition != null) {
             this.stopAnimation();
         }
