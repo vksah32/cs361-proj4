@@ -1,3 +1,6 @@
+
+
+
 /**
  * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
  * Class: CS361
@@ -37,13 +40,11 @@ public class Controller {
 
     private ClickInPanelHandler clickInPanelHandler;
     private ClickInNoteHandler clickInNoteHandler;
-    private DragInNoteHandler dragInNoteHandler;
     private DragInPanelHandler dragInPanelHandler;
 
     private Line line;
     private TranslateTransition transition;
 
-    private boolean dragStartedInPanel;
 
 
 
@@ -52,11 +53,7 @@ public class Controller {
         this.composition = new Composition();
         this.clickInPanelHandler = new ClickInPanelHandler(this.compositionPanel);
         this.clickInNoteHandler = new ClickInNoteHandler(this.compositionPanel);
-        this.dragInNoteHandler = new DragInNoteHandler(this.compositionPanel);
         this.dragInPanelHandler = new DragInPanelHandler(this.compositionPanel);
-        //this.compositionPanel.addEventFilter(MouseEvent.DRAG_DETECTED, this::handleDragDetected);
-        //this.compositionPanel.addEventFilter(MouseEvent.MOUSE_DRAGGED, this::handleDragged);
-        //this.compositionPanel.addEventFilter(MouseEvent.MOUSE_RELEASED, this::handleDragReleased);
     }
 
 
@@ -94,34 +91,17 @@ public class Controller {
 
     @FXML
     public void handleMousePressed(MouseEvent event){
-        if(this.compositionPanel.inARectangle(event.getX(),event.getY())) {
-            this.dragInNoteHandler.handleMousePressed(event);
-            this.dragStartedInPanel = false;
-            System.out.println("DO WE GO HERE");
-        }
-        else{
-            this.dragInPanelHandler.handleMousePressed(event);
-            this.dragStartedInPanel = true;
-        }
+        this.dragInPanelHandler.handleMousePressed(event);
     }
 
     @FXML
     public void handleDragged(MouseEvent event){
-        if(this.dragStartedInPanel){
-            dragInPanelHandler.handleDragOver(event);
-        }
-
+        dragInPanelHandler.handleDragged(event);
     }
 
     @FXML
     public void handleDragReleased(MouseEvent event){
-
-        if(this.dragStartedInPanel){
-            dragInPanelHandler.handleDragReleased(event);
-        }
-        else{
-            dragInNoteHandler.handleDragReleased(event);
-        }
+        dragInPanelHandler.handleDragReleased(event);
     }
 
     /**

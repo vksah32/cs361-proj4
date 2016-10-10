@@ -1,3 +1,7 @@
+
+
+
+
 package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.input.MouseEvent;
@@ -29,12 +33,15 @@ public class ClickInPanelHandler {
     public void addNote(double x, double y, String instrument) {
         double pitch = Math.floor((y - 1) / 10) * 10 + 1;
         NoteRectangle rectangle = new NoteRectangle(x, pitch, this.DEFAULT_RECTANGLE_WIDTH, 10, instrument);
-        DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit);
-        rectangle.setOnDragDetected(handler);
-        rectangle.setOnMouseDragged(handler);
-        rectangle.setOnMouseDragReleased(handler);
+        DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit,rectangle);
+        rectangle.setOnMousePressed(handler::handleMousePressed);//These are really cool!
+        rectangle.setOnMouseDragged(handler::handleDragged);
+        rectangle.setOnMouseDragReleased(handler::handleDragReleased);
         this.panelToEdit.clearSelected();
         this.panelToEdit.addRectangle(rectangle,true);
 
     }
 }
+
+
+

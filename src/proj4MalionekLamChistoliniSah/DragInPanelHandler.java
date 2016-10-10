@@ -35,7 +35,7 @@ public class DragInPanelHandler {
         this.metaDown = event.isShortcutDown();
     }
 
-    public void handleDragOver(MouseEvent event) {
+    public void handleDragged(MouseEvent event) {
         this.selectionRectangle.setVisible(true);
         if(!this.metaDown){
             this.panelToEdit.clearSelected();
