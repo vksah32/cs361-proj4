@@ -13,7 +13,9 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
     private double startX;
     private double startY;
     private double startWidth;
-    private double sourceRectangleStartX;
+    private double previousX;
+    private double previousY;
+
 
     private CompositionPanel panelToEdit;
     private NoteRectangle sourceRectangle;
@@ -31,7 +33,8 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
         this.startX = event.getX();
         this.startY = event.getY();
         this.startWidth = this.sourceRectangle.getWidth();
-        this.sourceRectangleStartX = this.sourceRectangle.getX();
+        this.previousX = event.getX();
+        this.previousY = event.getY();
 
         event.consume();
     }
@@ -56,11 +59,14 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
 
     private void handleNoteTranslate(MouseEvent event){
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
-        double deltaX = event.getX()-this.startX;
-        double deltaY = event.getY()-this.startY;
+        double deltaX = event.getX()-this.previousX;
+        double deltaY = event.getY()-this.previousY;
         for(NoteRectangle rectangle:selectedRectangles){
-
+            rectangle.setX(rectangle.getX()+deltaX);
+            rectangle.setY(rectangle.getY()+deltaY);
         }
+        this.previousX=event.getX();
+        this.previousY=event.getY();
     }
 
     private void handleNoteExtend(MouseEvent event){
