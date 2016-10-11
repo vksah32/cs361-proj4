@@ -17,23 +17,25 @@ import java.util.ArrayList;
  * composition.
  */
 public class Composition {
-    /**The volume at which all the notes will be played*/
+    /** The volume at which all the notes will be played */
     public static final int VOLUME = 127;
-    /**The channel on which all of the notes will be played*/
+    /** The channel on which all of the notes will be played */
     public static final int CHANNEL = 0;
-    /**The track on which this compositio will be played*/
+    /** The track on which this composition will be played */
     public static final int TRACK_INDEX = 0;
 
-    /**The midi player on which this composition will be played*/
+    /** The midiplayer on which this composition will be played */
     private MidiPlayer player;
 
 
-    /**Creates a new Composition object with a midiplayer which has 60 beats per minute and 100 ticks per beat*/
+    /** Creates a new Composition object with a midiplayer which has
+     * 60 beats per minute and 100 ticks per beat*/
     public Composition(){
         player = new MidiPlayer(100,60);
     }
     /**
-     * This will add a note to this composition given a set of note parameters into a midi event
+     * This will add a note to this composition
+     * given a set of note parameters into a midi event
      * @param startTick the tick at which this note will be played
      * @param duration how long this note will be played
      * @param pitch the pitch of the note
@@ -52,7 +54,8 @@ public class Composition {
      * @param note the note which will be added to the composition
      */
     public void addNote(Note note){
-        this.addNote(note.getStartTick(),note.getDuration(),note.getPitch(),note.getInstrument());
+        this.addNote(note.getStartTick(),note.getDuration(),
+                     note.getPitch(),note.getInstrument());
     }
 
     /**
