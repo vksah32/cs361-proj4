@@ -16,7 +16,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
-
+/**Handles when the user drags in a note rectangle*/
 public class DragInNoteHandler {
     /** The mouse x coordinate from the previous mouse event*/
     private double previousX;
