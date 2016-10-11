@@ -28,58 +28,59 @@ public class CompositionPanel extends Pane {
     /**
      * Constructs the Panel and draws the appropriate lines.
      */
-    public CompositionPanel() {
+    public CompositionPanel()
+    {
         this.drawLines();
         rectangles = new ArrayList<>();
     }
 
 
-    public void addRectangle(NoteRectangle rectangle, boolean selected) {
+    public void addRectangle(NoteRectangle rectangle, boolean selected){
         this.getChildren().add(rectangle);
         rectangles.add(rectangle);
-        if (selected) {
+        if(selected){
             rectangle.setSelected(true);
         }
     }
 
     /**
-     * Draws 128 lines with the specified spacing and colors.
+     * Draws 127 lines with the specified spacing and colors.
      */
-    private void drawLines() {
-        for (int i = 0; i < 127; i++) {
-            Line line = new Line(0, i * 10 + 1, 2000, i * 10 + 1);
-            line.setStrokeWidth(1);
-            line.setStroke(Color.LIGHTGRAY);
-
+    private void drawLines()
+    {
+        for(int i = 1; i < 128; i++)
+        {
+            Line line = new Line(0, i*10+1, 2000,i*10+1);
+            line.setId("lines");
             this.getChildren().add(line);
         }
     }
 
-    public ArrayList<NoteRectangle> getRectangles() {
+    public ArrayList<NoteRectangle> getRectangles(){
         return this.rectangles;
     }
 
-    public ArrayList<NoteRectangle> getSelectedRectangles() {
+    public ArrayList<NoteRectangle> getSelectedRectangles(){
         ArrayList<NoteRectangle> selectedList = new ArrayList<>();
-        for (NoteRectangle rectangle : this.rectangles) {
-            if (rectangle.isSelected()) {
+        for(NoteRectangle rectangle:this.rectangles){
+            if(rectangle.isSelected()){
                 selectedList.add(rectangle);
             }
         }
         return selectedList;
     }
 
-    public void clearSelected() {
-        for (NoteRectangle rectangle : this.rectangles) {
-            if (rectangle.isSelected()) {
+    public void clearSelected(){
+        for(NoteRectangle rectangle:this.rectangles){
+            if(rectangle.isSelected()){
                 rectangle.setSelected(false);
             }
         }
     }
 
-    public boolean inARectangle(double x, double y) {
-        for (NoteRectangle rectangle : this.rectangles) {
-            if (rectangle.contains(x, y)) {
+    public boolean inARectangle(double x, double y){
+        for(NoteRectangle rectangle: this.rectangles){
+            if(rectangle.contains(x,y)){
                 return true;
             }
         }
@@ -89,17 +90,17 @@ public class CompositionPanel extends Pane {
     /**
      * removes the selected rectangles
      */
-    public void deleteSelectedNotes() {
+    public void deleteSelectedNotes(){
 
         ArrayList<NoteRectangle> rectangles = this.getSelectedRectangles();
-        for (NoteRectangle r : rectangles) { //first remove from the panel
+        for (NoteRectangle r: rectangles){ //first remove from the panel
             this.getChildren().remove(r);
         }
         this.rectangles.removeAll(rectangles); //then remove from Arraylist of rectangles
     }
 
-    public void selectAllNotes() {
-        for (NoteRectangle r : this.rectangles) {
+    public void selectAllNotes(){
+        for (NoteRectangle r: this.rectangles){
             r.setSelected(true);
         }
     }
