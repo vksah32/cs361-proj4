@@ -1,5 +1,6 @@
 /**
  * File: DragInNoteHandler.java
+ *
  * @author Victoria Chistolini
  * @author Tiffany Lam
  * @author Joseph Malionek
@@ -11,15 +12,12 @@
 
 package proj4MalionekLamChistoliniSah;
 
-import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 
-/**
- * Created by joseph on 10/9/16.
- */
-public class DragInNoteHandler{
+
+public class DragInNoteHandler {
     /** The mouse x coordinate from the previous mouse event*/
     private double previousX;
     /** The mouse y coordinate from the previous mouse event*/
@@ -36,7 +34,7 @@ public class DragInNoteHandler{
      * @param sourceRectangle The rectangle that this listens to
      * @param panelToEdit The panel which this edits
      */
-    public DragInNoteHandler(CompositionPanel panelToEdit, NoteRectangle sourceRectangle){
+    public DragInNoteHandler(CompositionPanel panelToEdit, NoteRectangle sourceRectangle) {
         this.sourceRectangle = sourceRectangle;
         this.panelToEdit = panelToEdit;
     }
@@ -46,10 +44,9 @@ public class DragInNoteHandler{
      * @param event the MouseEvent associated with the mouse press
      */
     public void handleMousePressed(MouseEvent event) {
-        if(event.getX()>=this.sourceRectangle.getX()+this.sourceRectangle.getWidth()-5){
+        if (event.getX() >= this.sourceRectangle.getX() + this.sourceRectangle.getWidth() - 5) {
             this.extendEventHappening = true;
-        }
-        else{
+        } else {
             this.extendEventHappening = false;
         }
         this.previousX = event.getX();
@@ -63,15 +60,13 @@ public class DragInNoteHandler{
      * @param event the MouseEvent associated with this mouse drag
      */
     public void handleDragged(MouseEvent event) {
-        if (!this.sourceRectangle.isSelected()){
+        if (!this.sourceRectangle.isSelected()) {
             this.panelToEdit.clearSelected();
             this.sourceRectangle.setSelected(true);
-        }
-        else{
-            if(this.extendEventHappening) {
+        } else {
+            if (this.extendEventHappening) {
                 this.handleNoteExtend(event);
-            }
-            else{
+            } else {
                 this.handleNoteTranslate(event);
             }
         }
@@ -83,29 +78,29 @@ public class DragInNoteHandler{
      * Handles dragging notes across the pane
      * @param event the MouseEvent associated with the mouse drag
      */
-    private void handleNoteTranslate(MouseEvent event){
+    private void handleNoteTranslate(MouseEvent event) {
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
-        double deltaX = event.getX()-this.previousX;
-        double deltaY = event.getY()-this.previousY;
-        for(NoteRectangle rectangle:selectedRectangles){
-            rectangle.setX(rectangle.getX()+deltaX);
-            rectangle.setY(rectangle.getY()+deltaY);
+        double deltaX = event.getX() - this.previousX;
+        double deltaY = event.getY() - this.previousY;
+        for (NoteRectangle rectangle : selectedRectangles) {
+            rectangle.setX(rectangle.getX() + deltaX);
+            rectangle.setY(rectangle.getY() + deltaY);
         }
-        this.previousX=event.getX();
-        this.previousY=event.getY();
+        this.previousX = event.getX();
+        this.previousY = event.getY();
     }
 
     /**
      * handles extending the lengths of the selected notes
      * @param event the MouseEvent associated with the mouse drag
      */
-    private void handleNoteExtend(MouseEvent event){
+    private void handleNoteExtend(MouseEvent event) {
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
-        double deltaX = event.getX()-this.sourceRectangle.getWidth()-this.sourceRectangle.getX();
-        for(NoteRectangle rectangle: selectedRectangles){
-            double width = rectangle.getWidth()+deltaX;
+        double deltaX = event.getX() - this.sourceRectangle.getWidth() - this.sourceRectangle.getX();
+        for (NoteRectangle rectangle : selectedRectangles) {
+            double width = rectangle.getWidth() + deltaX;
             //makes sure the width is at least 5
-            width = Math.max(5,width);
+            width = Math.max(5, width);
             //makes sure the note does not extend past the end of the player
             //width = Math.min(width, this.panelToEdit.getWidth()-rectangle.getX());
             rectangle.setWidth(width);
@@ -119,7 +114,7 @@ public class DragInNoteHandler{
      */
     public void handleMouseReleased(MouseEvent event) {
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
-        for(NoteRectangle rectangle: selectedRectangles){
+        for (NoteRectangle rectangle : selectedRectangles) {
             double newPitch = Math.floor((rectangle.getY() - 1) / 10) * 10 + 1;
             rectangle.setY(newPitch);
         }
