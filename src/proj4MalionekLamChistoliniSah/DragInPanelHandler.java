@@ -20,13 +20,13 @@ public class DragInPanelHandler {
 
     /** The panel that this handler actively edits and listens to */
     private CompositionPanel panelToEdit;
-    /**The rectangle which appears when you select a group of notes*/
+    /** The rectangle which appears when you select a group of notes*/
     private Rectangle selectionRectangle;
-    /**The x coordinate at which the drag event originated*/
+    /** The x coordinate at which the drag event originated*/
     private double startX;
-    /**The y coordinate at which the drag event originated*/
+    /** The y coordinate at which the drag event originated*/
     private double startY;
-    /**Whether or not the control key is held down*/
+    /** Whether or not the control key is held down*/
     private boolean metaDown;
 
     /** Creates a new DragInPaneHandler
@@ -64,6 +64,7 @@ public class DragInPanelHandler {
         }
         double leftX;
         double width;
+        // makes sure things work when the box is reversed
         if(event.getX()<this.startX){
             leftX = event.getX();
             width = this.startX-event.getX();

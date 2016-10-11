@@ -164,7 +164,7 @@ public class Controller {
         if (this.transition != null) {
             this.composition.stop();
         }
-
+        //only plays when there are rectangles
         if (this.compositionPanel.getRectangles().size() > 0) {
             ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(
                                     this.compositionPanel.getRectangles());

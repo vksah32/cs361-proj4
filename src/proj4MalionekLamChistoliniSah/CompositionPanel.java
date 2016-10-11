@@ -128,5 +128,4 @@ public class CompositionPanel extends Pane {
             rectangle.setSelected(true);
         }
     }
-
 }

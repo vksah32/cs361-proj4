@@ -1,5 +1,6 @@
 /**
  * File: ClickInPanelHandler.java
+ *
  * @author Victoria Chistolini
  * @author Tiffany Lam
  * @author Joseph Malionek
@@ -45,7 +46,6 @@ public class ClickInPanelHandler {
             isMetaDown = event.isShortcutDown();
             addNote(event.getX(), event.getY(), instrument);
         }
-
     }
 
     /**
@@ -58,9 +58,10 @@ public class ClickInPanelHandler {
     public void addNote(double x, double y, String instrument) {
         double pitch = Math.floor((y - 1) / 10) * 10 + 1;
         NoteRectangle rectangle = new NoteRectangle(x, pitch,
-                                                    this.DEFAULT_RECTANGLE_WIDTH,
-                                                    10, instrument);
+                this.DEFAULT_RECTANGLE_WIDTH,
+                10, instrument);
         DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit, rectangle);
+        // sets the handlers of these events to be the specified method
         rectangle.setOnMousePressed(handler::handleMousePressed);
         rectangle.setOnMouseDragged(handler::handleDragged);
         rectangle.setOnMouseReleased(handler::handleMouseReleased);

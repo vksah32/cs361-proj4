@@ -82,6 +82,4 @@ public class Composition {
         this.player.clear();
         this.player.stop();
     }
-
-
 }

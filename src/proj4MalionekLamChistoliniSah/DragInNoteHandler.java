@@ -99,10 +99,10 @@ public class DragInNoteHandler {
         double deltaX = event.getX() - this.sourceRectangle.getWidth() - this.sourceRectangle.getX();
         for (NoteRectangle rectangle : selectedRectangles) {
             double width = rectangle.getWidth() + deltaX;
-            //makes sure the width is at least 5
+            // makes sure the width is at least 5
             width = Math.max(5, width);
-            //makes sure the note does not extend past the end of the player
-            //width = Math.min(width, this.panelToEdit.getWidth()-rectangle.getX());
+            // makes sure the note does not extend past the end of the player
+            // width = Math.min(width, this.panelToEdit.getWidth()-rectangle.getX());
             rectangle.setWidth(width);
         }
 
