@@ -56,23 +56,39 @@ public class Note {
      * sets how long this note will play for
      * @param duration how long this note will play
      */
-
     public void setDuration(int duration) {
         this.duration = duration;
     }
 
+    /**the pitch at which this note will be played
+     *
+     * @return the pitch of this note
+     */
     public int getPitch() {
         return pitch;
     }
 
+    /**
+     * sets the pitch at which this note will be played
+     * @param pitch the pitch at which this note will be played
+     */
     public void setPitch(int pitch) {
         this.pitch = pitch;
     }
+
+    /**
+     * the tick at which this note will start playing
+     * @return the starting tick
+     */
 
     public int getStartTick() {
         return startTick;
     }
 
+    /**
+     * sets the tick at which this note will first be played
+     * @param startTick the starting tick
+     */
     public void setStartTick(int startTick) {
         this.startTick = startTick;
     }
