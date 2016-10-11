@@ -1,5 +1,4 @@
 /**
- *
  * File: CompositionPanel.java
  * @author Victoria Chistolini
  * @author Tiffany Lam

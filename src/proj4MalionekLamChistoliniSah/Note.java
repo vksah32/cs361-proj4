@@ -12,16 +12,29 @@
 package proj4MalionekLamChistoliniSah;
 
 /**
- * Created by joseph on 10/10/16.
+ * Holds all the information of a note
  */
 public class Note {
+
+    /** the instrument number */
     private int instrument;
+    /** the duration of the note */
     private int duration;
+    /** the pitch of the note */
     private int pitch;
+    /** the start tick of the note */
     private int startTick;
+    /** sets the default track to 0 */
     private final int TRACK=0;
+    /** sets the default channel to 0 */
     private final int CHANNEL=0;
 
+    /**
+     * The constructor for Note
+     * @param startTick
+     * @param duration
+     * @param pitch
+     */
     public Note(int startTick, int duration, int pitch){
         this.startTick = startTick;
         this.duration = duration;
@@ -29,8 +42,8 @@ public class Note {
     }
 
     /**
-     * Returns this notes instrument
-     * @return this notes instrument
+     * gets the note's instrument
+     * @return this note's instrument
      */
     public int getInstrument() {
         return instrument;
@@ -45,7 +58,7 @@ public class Note {
     }
 
     /**
-     * this notes duration
+     * gets the duration of the note
      * @return the duration of the note
      */
     public int getDuration() {
@@ -60,8 +73,8 @@ public class Note {
         this.duration = duration;
     }
 
-    /**the pitch at which this note will be played
-     *
+    /**
+     * the pitch at which this note will be played
      * @return the pitch of this note
      */
     public int getPitch() {
