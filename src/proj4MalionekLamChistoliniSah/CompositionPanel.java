@@ -17,11 +17,11 @@ import javafx.scene.shape.Line;
 import java.util.ArrayList;
 
 /**
- * Extends the Pane class and is the parent node of
- * all of composition notes and lines.
+ * Extends the Pane class and is the parent node of all of composition notes and lines.
  */
 public class CompositionPanel extends Pane {
 
+    /** an ArrayList of NoteRectangles */
     ArrayList<NoteRectangle> rectangles;
 
     /**
@@ -33,7 +33,11 @@ public class CompositionPanel extends Pane {
         rectangles = new ArrayList<>();
     }
 
-
+    /**
+     * adds the NoteRectangles
+     * @param rectangle
+     * @param selected
+     */
     public void addRectangle(NoteRectangle rectangle, boolean selected){
         this.getChildren().add(rectangle);
         rectangles.add(rectangle);
@@ -55,10 +59,18 @@ public class CompositionPanel extends Pane {
         }
     }
 
+    /**
+     * gets the rectangles
+     * @return an ArrayList of the rectangles
+     */
     public ArrayList<NoteRectangle> getRectangles(){
         return this.rectangles;
     }
 
+    /**
+     * gets the selectedRectangles
+     * @return an ArrayList of the selected notes
+     */
     public ArrayList<NoteRectangle> getSelectedRectangles(){
         ArrayList<NoteRectangle> selectedList = new ArrayList<>();
         for(NoteRectangle rectangle:this.rectangles){
@@ -70,7 +82,7 @@ public class CompositionPanel extends Pane {
     }
 
     /**
-     * unselects the rectangles
+     * clears the selection of the rectangles
      */
     public void clearSelected(){
         for(NoteRectangle rectangle:this.rectangles){
@@ -80,6 +92,12 @@ public class CompositionPanel extends Pane {
         }
     }
 
+    /**
+     * determines whether the given x and y coordinates are in a rectangle
+     * @param x
+     * @param y
+     * @return true if the coordinates are in a rectangle, false otherwise
+     */
     public boolean inARectangle(double x, double y){
         for(NoteRectangle rectangle: this.rectangles){
             if(rectangle.contains(x,y)){
@@ -95,15 +113,20 @@ public class CompositionPanel extends Pane {
     public void deleteSelectedNotes(){
 
         ArrayList<NoteRectangle> rectangles = this.getSelectedRectangles();
-        for (NoteRectangle r: rectangles){ //first remove from the panel
+        //first remove from the panel
+        for (NoteRectangle r: rectangles){
             this.getChildren().remove(r);
         }
-        this.rectangles.removeAll(rectangles); //then remove from Arraylist of rectangles
+        //then remove from ArrayList of rectangles
+        this.rectangles.removeAll(rectangles);
     }
 
+    /**
+     * selects all the notes in the composition
+     */
     public void selectAllNotes(){
-        for (NoteRectangle r: this.rectangles){
-            r.setSelected(true);
+        for (NoteRectangle rectangle: this.rectangles){
+            rectangle.setSelected(true);
         }
     }
 
