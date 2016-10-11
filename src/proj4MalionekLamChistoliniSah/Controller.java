@@ -102,7 +102,6 @@ public class Controller {
 
     @FXML
     public void handleDragReleased(MouseEvent event){
-        System.out.println("SELIRHLSDN");
         dragInPanelHandler.handleDragReleased(event);
     }
 
