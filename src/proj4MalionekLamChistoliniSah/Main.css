@@ -18,6 +18,7 @@
 /* set the color of red vertical line */
 #playLine {
     -fx-stroke: red;
+    -fx-stroke-width: 1;
 }
 
 /* set the styling for the composition lines */
