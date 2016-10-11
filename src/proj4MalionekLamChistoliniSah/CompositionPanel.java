@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class CompositionPanel extends Pane {
 
     /** an ArrayList of NoteRectangles */
-    ArrayList<NoteRectangle> rectangles;
+    private ArrayList<NoteRectangle> rectangles;
 
     /**
      * Constructs the Panel and draws the appropriate lines.
