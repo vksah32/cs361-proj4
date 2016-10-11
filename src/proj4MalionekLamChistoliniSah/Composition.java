@@ -1,6 +1,9 @@
 /**
  * File: Composition.java
- * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
  * Class: CS361
  * Project: 4
  * Date: October 11, 2016
@@ -8,13 +11,10 @@
 
 package proj4MalionekLamChistoliniSah;
 
-import javafx.scene.shape.Rectangle;
-
 import java.util.ArrayList;
 
 /**
- * The central logic for creating and playing back a
- * composition.
+ * The central logic for creating and playing back a composition.
  */
 public class Composition {
     /** The volume at which all the notes will be played */
