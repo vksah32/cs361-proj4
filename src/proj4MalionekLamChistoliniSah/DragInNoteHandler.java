@@ -19,27 +19,32 @@ import java.util.ArrayList;
 /**
  * Created by joseph on 10/9/16.
  */
-public class DragInNoteHandler implements EventHandler<MouseEvent> {
-    /**
-     * The previous mouse
-     */
+public class DragInNoteHandler{
+    /** The mouse x coordinate from the previous mouse event*/
     private double previousX;
+    /** The mouse y coordinate from the previous mouse event*/
     private double previousY;
+    /** Keeps track of whether the current drag action is extending rectangles or dragging rectangles */
     private boolean extendEventHappening;
-
-
+    /** The panel that this handler actively edits */
     private CompositionPanel panelToEdit;
+    /** The rectangle that this handler is assigned to */
     private NoteRectangle sourceRectangle;
 
+    /**Creates a new DragInNoteHandler
+     *
+     * @param sourceRectangle The rectangle that this listens to
+     * @param panelToEdit The panel which this edits
+     */
     public DragInNoteHandler(CompositionPanel panelToEdit, NoteRectangle sourceRectangle){
         this.sourceRectangle = sourceRectangle;
         this.panelToEdit = panelToEdit;
     }
 
-    public void handle(MouseEvent event){
-
-    }
-
+    /**
+     * Handles when the mouse presses on this handlers rectangle
+     * @param event the MouseEvent associated with the mouse press
+     */
     public void handleMousePressed(MouseEvent event) {
         if(event.getX()>=this.sourceRectangle.getX()+this.sourceRectangle.getWidth()-5){
             this.extendEventHappening = true;
@@ -53,7 +58,10 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
     }
 
 
-
+    /**
+     * Handles when the mouse is dragging
+     * @param event the MouseEvent associated with this mouse drag
+     */
     public void handleDragged(MouseEvent event) {
         if (!this.sourceRectangle.isSelected()){
             this.panelToEdit.clearSelected();
@@ -71,6 +79,10 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
         event.consume();
     }
 
+    /**
+     * Handles dragging notes across the pane
+     * @param event the MouseEvent associated with the mouse drag
+     */
     private void handleNoteTranslate(MouseEvent event){
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
         double deltaX = event.getX()-this.previousX;
@@ -83,6 +95,10 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
         this.previousY=event.getY();
     }
 
+    /**
+     * handles extending the lengths of the selected notes
+     * @param event the MouseEvent associated with the mouse drag
+     */
     private void handleNoteExtend(MouseEvent event){
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
         double deltaX = event.getX()-this.sourceRectangle.getWidth()-this.sourceRectangle.getX();
@@ -97,6 +113,10 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
 
     }
 
+    /**
+     * Takes care of what happens when the mouse is released after a drag
+     * @param event the MouseEvent fired when the mouse was released
+     */
     public void handleMouseReleased(MouseEvent event) {
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
         for(NoteRectangle rectangle: selectedRectangles){
