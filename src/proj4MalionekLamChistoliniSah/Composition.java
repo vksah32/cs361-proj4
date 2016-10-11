@@ -25,24 +25,22 @@ public class Composition {
     private MidiPlayer player = new MidiPlayer(100, 60);
 
 
-
-
     /**
      * This will translate a rectangle into a midi event
      * Add Midi Events to the Sequencer.
      */
-    public void addNote(int startTick, int duration, int pitch, int instrument){
+    public void addNote(int startTick, int duration, int pitch, int instrument) {
         this.player.addNote(pitch, this.VOLUME, startTick,
-                                duration, this.CHANNEL, this.TRACK_INDEX,
-                                instrument);
+                duration, this.CHANNEL, this.TRACK_INDEX,
+                instrument);
 
     }
 
-    public void play(){
+    public void play() {
         this.player.play();
     }
 
-    public void stop(){
+    public void stop() {
         this.player.clear();
         this.player.stop();
     }
