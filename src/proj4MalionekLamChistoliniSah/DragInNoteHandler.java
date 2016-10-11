@@ -1,7 +1,6 @@
 package proj4MalionekLamChistoliniSah;
 
 import javafx.event.EventHandler;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
@@ -10,11 +9,12 @@ import java.util.ArrayList;
  * Created by joseph on 10/9/16.
  */
 public class DragInNoteHandler implements EventHandler<MouseEvent> {
-    private double startX;
-    private double startY;
-    private double startWidth;
+    /**
+     * The previous mouse 
+     */
     private double previousX;
     private double previousY;
+    private boolean extendEventHappening;
 
 
     private CompositionPanel panelToEdit;
@@ -30,12 +30,14 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
     }
 
     public void handleMousePressed(MouseEvent event) {
-        this.startX = event.getX();
-        this.startY = event.getY();
-        this.startWidth = this.sourceRectangle.getWidth();
+        if(event.getX()>=this.sourceRectangle.getX()+this.sourceRectangle.getWidth()-5){
+            this.extendEventHappening = true;
+        }
+        else{
+            this.extendEventHappening = false;
+        }
         this.previousX = event.getX();
         this.previousY = event.getY();
-
         event.consume();
     }
 
@@ -46,12 +48,13 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
             this.panelToEdit.clearSelected();
             this.sourceRectangle.setSelected(true);
         }
-        if(this.startX>=this.sourceRectangle.getX()+this.startWidth-5){
-
-            this.handleNoteExtend(event);
-        }
         else{
-            this.handleNoteTranslate(event);
+            if(this.extendEventHappening) {
+                this.handleNoteExtend(event);
+            }
+            else{
+                this.handleNoteTranslate(event);
+            }
         }
 
         event.consume();
@@ -86,6 +89,12 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
 
 
     public void handleDragReleased(MouseEvent event) {
+        System.out.println("DO WE GO HERE");
+        ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
+        for(NoteRectangle rectangle: selectedRectangles){
+            double newPitch = Math.floor((rectangle.getY() - 1) / 10) * 10 + 1;
+            rectangle.setY(newPitch);
+        }
     }
 }
 

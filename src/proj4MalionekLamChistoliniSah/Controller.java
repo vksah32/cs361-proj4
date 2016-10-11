@@ -44,7 +44,7 @@ public class Controller {
 
     private Line line;
     private TranslateTransition transition;
-    
+
     private boolean dragStartedInPanel;
     private boolean isPlaying;
 
@@ -102,6 +102,7 @@ public class Controller {
 
     @FXML
     public void handleDragReleased(MouseEvent event){
+        System.out.println("SELIRHLSDN");
         dragInPanelHandler.handleDragReleased(event);
     }
 
