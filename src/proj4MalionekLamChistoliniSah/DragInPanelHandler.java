@@ -74,7 +74,7 @@ public class DragInPanelHandler {
         this.selectionRectangle.setHeight(height);
         this.selectionRectangle.setX(leftX);
         this.selectionRectangle.setY(lowestY);
-        ArrayList<NoteRectangle> rectangles = this.panelToEdit.rectangles;
+        ArrayList<NoteRectangle> rectangles = this.panelToEdit.getRectangles();
         for(NoteRectangle rectangle: rectangles){
             if(rectangle.intersects(leftX,lowestY,width,height)){
                 rectangle.setSelected(true);

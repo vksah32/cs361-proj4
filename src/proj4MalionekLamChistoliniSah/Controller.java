@@ -104,10 +104,10 @@ public class Controller {
         this.dragInPanelHandler.handleMousePressed(event);
     }
 
-    @FXML
     /**
      * handles when the mouse is dragged
      */
+    @FXML
     public void handleDragged(MouseEvent event) {
         dragInPanelHandler.handleDragged(event);
     }
@@ -166,7 +166,8 @@ public class Controller {
         }
 
         if (this.compositionPanel.getRectangles().size() > 0) {
-            ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(this.compositionPanel.getRectangles());
+            ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(
+                                    this.compositionPanel.getRectangles());
             this.composition.addNotes(notes);
             this.beginAnimation();
             this.composition.play();
@@ -174,8 +175,7 @@ public class Controller {
     }
 
     /**
-     * Stops and clears the composition and destroys the animation
-     * if there is one.
+     * Stops and clears the composition and destroys the animation if there is one.
      */
     @FXML
     public void stopComposition() {
@@ -197,11 +197,17 @@ public class Controller {
         System.exit(0);
     }
 
+    /**
+     * deletes the selected notes
+     */
     public void deleteSelectedNotes() {
         this.compositionPanel.deleteSelectedNotes();
 
     }
 
+    /**
+     * selects all the notes
+     */
     public void selectAllNotes() {
         this.compositionPanel.selectAllNotes();
     }
