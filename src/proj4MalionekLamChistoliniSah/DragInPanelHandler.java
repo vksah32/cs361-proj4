@@ -62,28 +62,10 @@ public class DragInPanelHandler {
         if(!this.metaDown){
             this.panelToEdit.clearSelected();
         }
-        double leftX;
-        double width;
-        // makes sure things work when the box is reversed
-        if(event.getX()<this.startX){
-            leftX = event.getX();
-            width = this.startX-event.getX();
-        }
-        else{
-            leftX = this.startX;
-            width = event.getX()-this.startX;
-        }
-        double lowestY;
-        double height;
-        if(event.getY()<this.startY){
-            lowestY = event.getY();
-            height = this.startY-event.getY();
-        }
-        else{
-            lowestY = this.startY;
-            height = event.getY()-this.startY;
-        }
-
+        double leftX = Math.min(event.getX(),this.startX);
+        double width = Math.abs(event.getX()-this.startX);
+        double lowestY = Math.min(event.getY(),this.startY);
+        double height = Math.abs(event.getY()-this.startY);
         this.selectionRectangle.setWidth(width);
         this.selectionRectangle.setHeight(height);
         this.selectionRectangle.setX(leftX);
