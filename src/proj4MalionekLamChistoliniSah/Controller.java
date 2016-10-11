@@ -165,6 +165,11 @@ public class Controller {
     }
 
     /**
+     * Adds all of the NoteRectangles into
+     */
+
+
+    /**
      * Stops and clears the composition and destroys the animation
      * if there is one.
      */
