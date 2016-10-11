@@ -57,6 +57,9 @@ public class Controller {
     /** a boolean field that keeps track of whether the composition is being played */
     private boolean isPlaying;
 
+    /** The Object which converts all of the rectangles into musical Notes*/
+    RectangleToNoteConverter converter;
+
     /**
      * initializes the controller
      */
@@ -65,6 +68,7 @@ public class Controller {
         this.composition = new Composition();
         this.clickInPanelHandler = new ClickInPanelHandler(this.compositionPanel);
         this.dragInPanelHandler = new DragInPanelHandler(this.compositionPanel);
+        this.converter = new RectangleToNoteConverter(this.compositionPanel,this.composition);
     }
 
 
@@ -166,9 +170,7 @@ public class Controller {
         }
         //only plays when there are rectangles
         if (this.compositionPanel.getRectangles().size() > 0) {
-            ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(
-                                    this.compositionPanel.getRectangles());
-            this.composition.addNotes(notes);
+            this.converter.loadComposition();
             this.beginAnimation();
             this.composition.play();
         }

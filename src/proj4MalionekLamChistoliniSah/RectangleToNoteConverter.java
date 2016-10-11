@@ -18,6 +18,22 @@ import java.util.ArrayList;
  */
 public class RectangleToNoteConverter {
 
+    private CompositionPanel panel;
+    private Composition composition;
+
+    public RectangleToNoteConverter(CompositionPanel panel, Composition composition){
+        this.composition = composition;
+        this.panel = panel;
+    }
+
+
+    public void loadComposition(){
+        ArrayList<NoteRectangle> rectangles = this.panel.getRectangles();
+        ArrayList<Note> convertedNotes=RectangleToNoteConverter.convertRectangles(rectangles);
+        this.composition.addNotes(convertedNotes);
+    }
+
+
     /**
      * converts a NoteRectangle to a Note
      * @param rectangle
