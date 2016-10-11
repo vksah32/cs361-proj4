@@ -1,10 +1,6 @@
 /**
- *
  * File: Composition.java
- * @author Victoria Chistolini
- * @author Tiffany Lam
- * @author Joseph Malionek
- * @author Vivek Sah
+ * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
  * Class: CS361
  * Project: 4
  * Date: October 11, 2016
@@ -12,27 +8,37 @@
 
 package proj4MalionekLamChistoliniSah;
 
+import javafx.scene.shape.Rectangle;
+
 import java.util.ArrayList;
 
 /**
- * The central logic for creating and playing back a composition.
+ * The central logic for creating and playing back a
+ * composition.
  */
 public class Composition {
-
-    /** sets the volume */
+    /**The volume at which all the notes will be played*/
     public static final int VOLUME = 127;
-
-    /** sets the channel */
+    /**The channel on which all of the notes will be played*/
     public static final int CHANNEL = 0;
-
-    /** sets the track index */
+    /**The track on which this compositio will be played*/
     public static final int TRACK_INDEX = 0;
 
-    private MidiPlayer player = new MidiPlayer(100, 60);
+    /**The midi player on which this composition will be played*/
+    private MidiPlayer player;
 
+
+    /**Creates a new Composition object with a midiplayer which has 60 beats per minute and 100 ticks per beat*/
+    public Composition(){
+        player = new MidiPlayer(100,60);
+    }
     /**
-     * This will translate a rectangle into a midi event
-     * Add Midi Events to the Sequencer.
+     * This will add a note to this composition given a set of note parameters into a midi event
+     * @param startTick the tick at which this note will be played
+     * @param duration how long this note will be played
+     * @param pitch the pitch of the note
+     * @param instrument the instrument with which this note will be played
+     *
      */
     public void addNote(int startTick, int duration, int pitch, int instrument) {
         this.player.addNote(pitch, this.VOLUME, startTick,
@@ -41,20 +47,34 @@ public class Composition {
 
     }
 
+    /**
+     * Adds a note to this composition
+     * @param note the note which will be added to the composition
+     */
     public void addNote(Note note){
         this.addNote(note.getStartTick(),note.getDuration(),note.getPitch(),note.getInstrument());
     }
 
+    /**
+     * adds a list of notes to this composition
+     * @param notes a list of notes
+     */
     public void addNotes(ArrayList<Note> notes){
         for(Note note: notes){
             this.addNote(note);
         }
     }
 
+    /**
+     * plays the current composition
+     */
     public void play() {
         this.player.play();
     }
 
+    /**
+     * stops the current composition and clears the midi player
+     */
     public void stop() {
         this.player.clear();
         this.player.stop();
