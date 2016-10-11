@@ -1,3 +1,14 @@
+/**
+ * File: Note.java
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
+ * Class: CS361
+ * Project: 4
+ * Date: October 11, 2016
+ */
+
 package proj4MalionekLamChistoliniSah;
 
 /**

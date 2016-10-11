@@ -1,24 +1,45 @@
-
-
+/**
+ * File: ClickInPanelHandler.java
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
+ * Class: CS361
+ * Project: 4
+ * Date: October 11, 2016
+ */
 
 package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Rectangle;
 
 /**
- * Created by joseph on 10/9/16.
+ * Handles when we click in the panel
  */
 public class ClickInPanelHandler {
+
+    /** The panelToEdit object that this handler edits */
     CompositionPanel panelToEdit;
+
+    /** the default rectangle width */
     private final int DEFAULT_RECTANGLE_WIDTH = 100;
+
+    /** a boolean field that keeps track of whether a meta/shortcut is pressed */
     private boolean isMetaDown;
 
-
+    /**
+     * Creates a new ClickInNoteHandler
+     * @param panelToEdit
+     */
     public ClickInPanelHandler(CompositionPanel panelToEdit) {
         this.panelToEdit = panelToEdit;
     }
 
+    /**
+     * handles when clicking in the panel
+     * @param event
+     * @param instrument
+     */
     public void handle(MouseEvent event, String instrument) {
         if (!this.panelToEdit.inARectangle(event.getX(), event.getY())) {
             isMetaDown = event.isShortcutDown();
@@ -36,9 +57,11 @@ public class ClickInPanelHandler {
      */
     public void addNote(double x, double y, String instrument) {
         double pitch = Math.floor((y - 1) / 10) * 10 + 1;
-        NoteRectangle rectangle = new NoteRectangle(x, pitch, this.DEFAULT_RECTANGLE_WIDTH, 10, instrument);
+        NoteRectangle rectangle = new NoteRectangle(x, pitch,
+                                                    this.DEFAULT_RECTANGLE_WIDTH,
+                                                    10, instrument);
         DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit, rectangle);
-        rectangle.setOnMousePressed(handler::handleMousePressed);//These are really cool!
+        rectangle.setOnMousePressed(handler::handleMousePressed);
         rectangle.setOnMouseDragged(handler::handleDragged);
         rectangle.setOnMouseReleased(handler::handleMouseReleased);
         if (!isMetaDown) {
@@ -46,7 +69,6 @@ public class ClickInPanelHandler {
         }
         rectangle.setOnMouseClicked(new ClickInNoteHandler(this.panelToEdit));
         this.panelToEdit.addRectangle(rectangle, true);
-
     }
 }
 

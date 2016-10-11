@@ -1,7 +1,17 @@
+/**
+ * File: DragInPanelHandler.java
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
+ * Class: CS361
+ * Project: 4
+ * Date: October 11, 2016
+ */
+
 package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;

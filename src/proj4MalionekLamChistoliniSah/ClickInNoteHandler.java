@@ -1,17 +1,29 @@
+/**
+ * File: ClickInNoteHandler.java
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
+ * Class: CS361
+ * Project: 4
+ * Date: October 11, 2016
+ */
+
 package proj4MalionekLamChistoliniSah;
 
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 
 /**
- * Created by joseph on 10/9/16.
+ * Handles when we click in a note
  */
 public class ClickInNoteHandler implements EventHandler<MouseEvent> {
-    /** The compositionPanel object that this handler modifies*/
+
+    /** The compositionPanel object that this handler modifies */
     private CompositionPanel compositionPanel;
 
-    /**Creates a new ClickInNoteHandler
-     *
+    /**
+     * Creates a new ClickInNoteHandler
      * @param compositionPanel
      */
     public ClickInNoteHandler(CompositionPanel compositionPanel) {
@@ -19,18 +31,25 @@ public class ClickInNoteHandler implements EventHandler<MouseEvent> {
      this.compositionPanel = compositionPanel;
     }
 
+    /**
+     * handles when clicking in a note
+     * @param event
+     */
     public void handle(MouseEvent event) {
-        NoteRectangle r = ((NoteRectangle) event.getSource());
+        NoteRectangle rect = ((NoteRectangle) event.getSource());
+        // control-clicking
         if (event.isShortcutDown()) {
-            if (r.isSelected()) {
-                r.setSelected(false);
+            if (rect.isSelected()) {
+                rect.setSelected(false);
             } else {
-                r.setSelected(true);
+                rect.setSelected(true);
             }
-        } else {
-            if (!r.isSelected()) {
+        }
+        // clicking
+        else {
+            if (!rect.isSelected()) {
                 this.compositionPanel.clearSelected();
-                r.setSelected(true);
+                rect.setSelected(true);
             }
         }
 

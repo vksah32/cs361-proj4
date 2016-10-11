@@ -1,8 +1,10 @@
-
 /**
  *
  * File: CompositionPanel.java
- * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
  * Class: CS361
  * Project: 4
  * Date: October 11, 2016
@@ -11,11 +13,7 @@
 package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -71,6 +69,9 @@ public class CompositionPanel extends Pane {
         return selectedList;
     }
 
+    /**
+     * unselects the rectangles
+     */
     public void clearSelected(){
         for(NoteRectangle rectangle:this.rectangles){
             if(rectangle.isSelected()){
