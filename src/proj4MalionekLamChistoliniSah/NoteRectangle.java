@@ -16,35 +16,28 @@ public class NoteRectangle extends Rectangle {
     }
 
     public void setInstrument(String instrument){
+        this.setId(instrument);
         if (instrument.equals("Harpsichord")){
-            this.setFill(Color.GREEN);
             this.instrument = 6;}
         else if (instrument.equals("Marimba")) {
-            this.setFill(Color.BLUE);
             this.instrument = 12;
         }
         else if (instrument.equals("Organ")) {
-            this.setFill(Color.GOLD);
             this.instrument = 19;
         }
         else if (instrument.equals("Accordion")){
-            this.setFill(Color.PURPLE);
             this.instrument = 21;
         }
         else if (instrument.equals("Guitar")) {
-            this.setFill(Color.DEEPSKYBLUE);
             this.instrument = 24;
         }
         else if (instrument.equals("Violin")) {
-            this.setFill(Color.BLACK);
             this.instrument = 40;
         }
         else if (instrument.equals("French Horn")) {
-            this.setFill(Color.SANDYBROWN);
             this.instrument = 60;
         }
         else{
-            this.setFill(Color.GREY);
             this.instrument = 0;
         }
     }

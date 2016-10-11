@@ -22,8 +22,7 @@ public class DragInPanelHandler {
         this.panelToEdit = panelToEdit;
         this.selectionRectangle = new Rectangle();
         this.selectionRectangle.setVisible(false);
-        this.selectionRectangle.setFill(Color.TRANSPARENT);
-        this.selectionRectangle.setStroke(Color.GOLD);
+        this.selectionRectangle.setId("selectionRectangle");
         this.panelToEdit.getChildren().add(this.selectionRectangle);
     }
 
