@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <?import javafx.scene.shape.Rectangle?>
-<BorderPane xmlns:fx="http://javafx.com/fxml">
+<BorderPane xmlns:fx="http://javafx.com/fxml" stylesheets="@Main.css">
     <top>
         <MenuBar>
             <Menu text="File">
