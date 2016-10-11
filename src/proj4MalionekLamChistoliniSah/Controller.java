@@ -110,7 +110,12 @@ public class Controller {
      * and begins the animation based on the length
      * of the composition.
      */
-    public void beginAnimation(double maxX) {
+    public void beginAnimation() {
+        ArrayList<NoteRectangle> rectangles = this.compositionPanel.getRectangles();
+        double maxX = 0;
+        for(NoteRectangle rectangle: rectangles){
+            maxX = Math.max(maxX, rectangle.getX()+rectangle.getWidth());
+        }
         this.line = new Line(0, 0, 0, 1280);
         this.line.setId("playLine");
         this.compositionPanel.getChildren().add(this.line);
@@ -150,10 +155,9 @@ public class Controller {
         }
 
         if (this.compositionPanel.getRectangles().size() > 0) {
-            double maxX = 0;
             ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(this.compositionPanel.getRectangles());
             this.composition.addNotes(notes);
-            this.beginAnimation(maxX);
+            this.beginAnimation();
             this.composition.play();
         }
     }
