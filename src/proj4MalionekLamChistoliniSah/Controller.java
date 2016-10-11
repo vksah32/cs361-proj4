@@ -33,8 +33,10 @@ import java.util.ArrayList;
  */
 public class Controller {
 
-    @FXML public CompositionPanel compositionPanel;
-    @FXML public ToggleGroup instrumentPanel;
+    @FXML
+    public CompositionPanel compositionPanel;
+    @FXML
+    public ToggleGroup instrumentPanel;
 
     private Composition composition;
 
@@ -49,9 +51,8 @@ public class Controller {
     private boolean isPlaying;
 
 
-
     @FXML
-    public void initialize(){
+    public void initialize() {
         this.composition = new Composition();
         this.clickInPanelHandler = new ClickInPanelHandler(this.compositionPanel);
         this.clickInNoteHandler = new ClickInNoteHandler(this.compositionPanel);
@@ -61,12 +62,12 @@ public class Controller {
 
     /**
      * Gets the name of the instrument from the selected RadioButton
+     *
      * @return instrument name
      */
     @FXML
-    public String getInstrument()
-    {
-        RadioButton b = (RadioButton)instrumentPanel.getSelectedToggle();
+    public String getInstrument() {
+        RadioButton b = (RadioButton) instrumentPanel.getSelectedToggle();
         return (b.getText());
     }
 
@@ -78,30 +79,28 @@ public class Controller {
      * @param event a mouse click event.
      */
     @FXML
-    public void handleMouseClick(MouseEvent event)
-    {
-        if(event.isStillSincePress()) { //differentiate from drag and drop
+    public void handleMouseClick(MouseEvent event) {
+        if (event.isStillSincePress()) { //differentiate from drag and drop
             if (isPlaying) {
                 this.stopComposition();
-            }
-            else {
-                this.clickInPanelHandler.handle(event,this.getInstrument());
+            } else {
+                this.clickInPanelHandler.handle(event, this.getInstrument());
             }
         }
     }
 
     @FXML
-    public void handleMousePressed(MouseEvent event){
+    public void handleMousePressed(MouseEvent event) {
         this.dragInPanelHandler.handleMousePressed(event);
     }
 
     @FXML
-    public void handleDragged(MouseEvent event){
+    public void handleDragged(MouseEvent event) {
         dragInPanelHandler.handleDragged(event);
     }
 
     @FXML
-    public void handleDragReleased(MouseEvent event){
+    public void handleDragReleased(MouseEvent event) {
         dragInPanelHandler.handleDragReleased(event);
     }
 
@@ -110,7 +109,7 @@ public class Controller {
      * and begins the animation based on the length
      * of the composition.
      */
-    public void beginAnimation(double maxX){
+    public void beginAnimation(double maxX) {
         this.line = new Line(0, 0, 0, 1280);
         this.line.setId("playLine");
         this.compositionPanel.getChildren().add(this.line);
@@ -131,7 +130,7 @@ public class Controller {
     /**
      * Stops the animation and removes the line from the composition panel.
      */
-    public void stopAnimation(){
+    public void stopAnimation() {
         this.transition.stop();
         this.compositionPanel.getChildren().remove(line);
     }
@@ -149,16 +148,16 @@ public class Controller {
             this.composition.stop();
         }
 
-        if(this.compositionPanel.getRectangles().size() > 0){
+        if (this.compositionPanel.getRectangles().size() > 0) {
             double maxX = 0;
             ArrayList<NoteRectangle> rectangles = compositionPanel.getRectangles();
-            for(NoteRectangle rectangle: rectangles){
-                maxX = Math.max(maxX,rectangle.getX()+rectangle.getWidth());
-                int startTick = (int)rectangle.getX();
-                int pitch = 128 - (int)rectangle.getY()/10;
-                int duration = (int)rectangle.getWidth();
+            for (NoteRectangle rectangle : rectangles) {
+                maxX = Math.max(maxX, rectangle.getX() + rectangle.getWidth());
+                int startTick = (int) rectangle.getX();
+                int pitch = 128 - (int) rectangle.getY() / 10;
+                int duration = (int) rectangle.getWidth();
                 int instrument = rectangle.getInstrument();
-                this.composition.addNote(startTick,duration,pitch,instrument);
+                this.composition.addNote(startTick, duration, pitch, instrument);
             }
             this.beginAnimation(maxX);
             this.composition.play();
@@ -170,8 +169,7 @@ public class Controller {
      * if there is one.
      */
     @FXML
-    public void stopComposition()
-    {
+    public void stopComposition() {
         this.isPlaying = false;
 
         if (this.transition != null) {
@@ -185,18 +183,17 @@ public class Controller {
      * destruction of the window.
      */
     @FXML
-    public void cleanUpOnExit()
-    {
+    public void cleanUpOnExit() {
         Platform.exit();
         System.exit(0);
     }
 
-    public void deleteSelectedNotes(){
+    public void deleteSelectedNotes() {
         this.compositionPanel.deleteSelectedNotes();
 
     }
 
-    public void selectAllNotes(){
+    public void selectAllNotes() {
         this.compositionPanel.selectAllNotes();
     }
 
