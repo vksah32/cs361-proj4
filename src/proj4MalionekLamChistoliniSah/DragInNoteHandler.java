@@ -10,7 +10,7 @@ import java.util.ArrayList;
  */
 public class DragInNoteHandler implements EventHandler<MouseEvent> {
     /**
-     * The previous mouse 
+     * The previous mouse
      */
     private double previousX;
     private double previousY;
@@ -86,10 +86,7 @@ public class DragInNoteHandler implements EventHandler<MouseEvent> {
 
     }
 
-
-
-    public void handleDragReleased(MouseEvent event) {
-        System.out.println("DO WE GO HERE");
+    public void handleMouseReleased(MouseEvent event) {
         ArrayList<NoteRectangle> selectedRectangles = this.panelToEdit.getSelectedRectangles();
         for(NoteRectangle rectangle: selectedRectangles){
             double newPitch = Math.floor((rectangle.getY() - 1) / 10) * 10 + 1;

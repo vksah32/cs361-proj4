@@ -41,7 +41,7 @@ public class ClickInPanelHandler {
         DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit,rectangle);
         rectangle.setOnMousePressed(handler::handleMousePressed);//These are really cool!
         rectangle.setOnMouseDragged(handler::handleDragged);
-        rectangle.setOnMouseDragReleased(handler::handleDragReleased);
+        rectangle.setOnMouseReleased(handler::handleMouseReleased);
         if (! isMetaDown) {
             this.panelToEdit.clearSelected();
         }
