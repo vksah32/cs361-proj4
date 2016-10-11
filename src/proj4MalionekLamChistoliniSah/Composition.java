@@ -36,6 +36,16 @@ public class Composition {
 
     }
 
+    public void addNote(Note note){
+        this.addNote(note.getStartTick(),note.getDuration(),note.getPitch(),note.getInstrument());
+    }
+
+    public void addNotes(ArrayList<Note> notes){
+        for(Note note: notes){
+            this.addNote(note);
+        }
+    }
+
     public void play() {
         this.player.play();
     }

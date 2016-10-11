@@ -9,7 +9,7 @@ public class RectangleToNoteConverter {
 
     public static Note convertRectangle(NoteRectangle rectangle){
         int duration = (int)rectangle.getWidth();
-        int startTick = (int)rectangle.getWidth();
+        int startTick = (int)rectangle.getX();
         int pitch = (127-(int)rectangle.getY()/10);
         Note note = new Note(startTick,duration,pitch);
         note.setInstrument(rectangle.getInstrument());
