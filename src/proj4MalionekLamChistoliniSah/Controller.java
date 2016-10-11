@@ -150,24 +150,12 @@ public class Controller {
 
         if (this.compositionPanel.getRectangles().size() > 0) {
             double maxX = 0;
-            ArrayList<NoteRectangle> rectangles = compositionPanel.getRectangles();
-            for (NoteRectangle rectangle : rectangles) {
-                maxX = Math.max(maxX, rectangle.getX() + rectangle.getWidth());
-                int startTick = (int) rectangle.getX();
-                int pitch = 128 - (int) rectangle.getY() / 10;
-                int duration = (int) rectangle.getWidth();
-                int instrument = rectangle.getInstrument();
-                this.composition.addNote(startTick, duration, pitch, instrument);
-            }
+            ArrayList<Note> notes = RectangleToNoteConverter.convertRectangles(this.compositionPanel.getRectangles());
+            this.composition.addNotes(notes);
             this.beginAnimation(maxX);
             this.composition.play();
         }
     }
-
-    /**
-     * Adds all of the NoteRectangles into
-     */
-
 
     /**
      * Stops and clears the composition and destroys the animation

@@ -1,5 +1,6 @@
 
 /**
+ *
  * File: CompositionPanel.java
  * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
  * Class: CS361
