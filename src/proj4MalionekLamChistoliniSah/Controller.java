@@ -112,7 +112,7 @@ public class Controller {
      */
     public void beginAnimation(double maxX){
         this.line = new Line(0, 0, 0, 1280);
-        this.line.setId("line");
+        this.line.setId("playLine");
         this.compositionPanel.getChildren().add(this.line);
         this.line.setStrokeWidth(1);
         this.transition = new TranslateTransition(new Duration(maxX * 10), this.line);
