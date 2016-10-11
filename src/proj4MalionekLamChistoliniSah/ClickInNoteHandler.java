@@ -51,7 +51,7 @@ public class ClickInNoteHandler implements EventHandler<MouseEvent> {
                 rect.setSelected(true);
             }
         }
-
-
+        //So that the border
+        event.consume();
     }
 }

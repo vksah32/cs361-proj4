@@ -16,7 +16,7 @@ import javafx.scene.shape.Line;
 import java.util.ArrayList;
 
 /**
- * Extends the Pane class and is the parent node of all of composition notes and lines.
+ * The pane in which all of the notes are stored and displayed.
  */
 public class CompositionPanel extends Pane {
 
@@ -90,21 +90,7 @@ public class CompositionPanel extends Pane {
             }
         }
     }
-
-    /**
-     * determines whether the given x and y coordinates are in a rectangle
-     * @param x
-     * @param y
-     * @return true if the coordinates are in a rectangle, false otherwise
-     */
-    public boolean inARectangle(double x, double y){
-        for(NoteRectangle rectangle: this.rectangles){
-            if(rectangle.contains(x,y)){
-                return true;
-            }
-        }
-        return false;
-    }
+    
 
     /**
      * removes the selected rectangles

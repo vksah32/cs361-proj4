@@ -42,10 +42,8 @@ public class ClickInPanelHandler {
      * @param instrument
      */
     public void handle(MouseEvent event, String instrument) {
-        if (!this.panelToEdit.inARectangle(event.getX(), event.getY())) {
-            isMetaDown = event.isShortcutDown();
-            addNote(event.getX(), event.getY(), instrument);
-        }
+        isMetaDown = event.isShortcutDown();
+        addNote(event.getX(), event.getY(), instrument);
     }
 
     /**
@@ -61,7 +59,8 @@ public class ClickInPanelHandler {
                 this.DEFAULT_RECTANGLE_WIDTH,
                 10, instrument);
         DragInNoteHandler handler = new DragInNoteHandler(this.panelToEdit, rectangle);
-        // sets the handlers of these events to be the specified method
+        // sets the handlers of these events to be the
+        // specified methods in its DragInNoteHandler object
         rectangle.setOnMousePressed(handler::handleMousePressed);
         rectangle.setOnMouseDragged(handler::handleDragged);
         rectangle.setOnMouseReleased(handler::handleMouseReleased);
