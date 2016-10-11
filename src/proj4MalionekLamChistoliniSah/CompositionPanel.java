@@ -44,16 +44,14 @@ public class CompositionPanel extends Pane {
     }
 
     /**
-     * Draws 128 lines with the specified spacing and colors.
+     * Draws 127 lines with the specified spacing and colors.
      */
     private void drawLines()
     {
-        for(int i = 0; i < 127; i++)
+        for(int i = 1; i < 128; i++)
         {
             Line line = new Line(0, i*10+1, 2000,i*10+1);
-            line.setStrokeWidth(1);
-            line.setStroke(Color.LIGHTGRAY);
-
+            line.setId("lines");
             this.getChildren().add(line);
         }
     }
