@@ -19,11 +19,8 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.RadioButton;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 import java.util.ArrayList;
@@ -34,36 +31,45 @@ import java.util.ArrayList;
  */
 public class Controller {
 
+    /** The compositionPanel object that is modified */
     @FXML
     public CompositionPanel compositionPanel;
+
+    /** A ToggleGroup to hold the instruments */
     @FXML
     public ToggleGroup instrumentPanel;
 
+    /** The composition object */
     private Composition composition;
 
+    /** The clickInPaneHandler object */
     private ClickInPanelHandler clickInPanelHandler;
-    private ClickInNoteHandler clickInNoteHandler;
+
+    /** The dragInPaneHandler object */
     private DragInPanelHandler dragInPanelHandler;
 
+    /** The line object */
     private Line line;
+
+    /** The transition object */
     private TranslateTransition transition;
 
-    private boolean dragStartedInPanel;
+    /** a boolean field that keeps track of whether the composition is being played */
     private boolean isPlaying;
 
-
+    /**
+     * initializes the controller
+     */
     @FXML
     public void initialize() {
         this.composition = new Composition();
         this.clickInPanelHandler = new ClickInPanelHandler(this.compositionPanel);
-        this.clickInNoteHandler = new ClickInNoteHandler(this.compositionPanel);
         this.dragInPanelHandler = new DragInPanelHandler(this.compositionPanel);
     }
 
 
     /**
      * Gets the name of the instrument from the selected RadioButton
-     *
      * @return instrument name
      */
     @FXML
@@ -90,36 +96,43 @@ public class Controller {
         }
     }
 
+    /**
+     * handles when the mouse is pressed
+     */
     @FXML
     public void handleMousePressed(MouseEvent event) {
         this.dragInPanelHandler.handleMousePressed(event);
     }
 
     @FXML
+    /**
+     * handles when the mouse is dragged
+     */
     public void handleDragged(MouseEvent event) {
         dragInPanelHandler.handleDragged(event);
     }
 
+    /**
+     * handles when the mouse is released after dragging
+     */
     @FXML
     public void handleDragReleased(MouseEvent event) {
         dragInPanelHandler.handleDragReleased(event);
     }
 
     /**
-     * Instantiates the line and transition fields
-     * and begins the animation based on the length
-     * of the composition.
+     * Instantiates the line and transition fields and begins the animation based on
+     * the length of the composition.
      */
     public void beginAnimation() {
         ArrayList<NoteRectangle> rectangles = this.compositionPanel.getRectangles();
         double maxX = 0;
         for(NoteRectangle rectangle: rectangles){
-            maxX = Math.max(maxX, rectangle.getX()+rectangle.getWidth());
+            maxX = Math.max(maxX, rectangle.getX() + rectangle.getWidth());
         }
         this.line = new Line(0, 0, 0, 1280);
         this.line.setId("playLine");
         this.compositionPanel.getChildren().add(this.line);
-        this.line.setStrokeWidth(1);
         this.transition = new TranslateTransition(new Duration(maxX * 10), this.line);
         this.transition.setToX(maxX);
         this.transition.setInterpolator(Interpolator.LINEAR);
@@ -130,7 +143,6 @@ public class Controller {
                 compositionPanel.getChildren().remove(line);
             }
         });
-        //this.composition.buildSequence();
     }
 
     /**
@@ -143,8 +155,7 @@ public class Controller {
 
     /**
      * Plays the composition and initiates the animation.
-     * Stops the current animation and plays a new one if
-     * one already exists.
+     * Stops the current animation and plays a new one if one already exists.
      */
     @FXML
     public void playComposition() {

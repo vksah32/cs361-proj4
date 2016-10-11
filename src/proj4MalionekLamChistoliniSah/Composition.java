@@ -1,6 +1,10 @@
 /**
+ *
  * File: Composition.java
- * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
+ * @author Victoria Chistolini
+ * @author Tiffany Lam
+ * @author Joseph Malionek
+ * @author Vivek Sah
  * Class: CS361
  * Project: 4
  * Date: October 11, 2016
@@ -8,22 +12,23 @@
 
 package proj4MalionekLamChistoliniSah;
 
-import javafx.scene.shape.Rectangle;
-
 import java.util.ArrayList;
 
 /**
- * The central logic for creating and playing back a
- * composition.
+ * The central logic for creating and playing back a composition.
  */
 public class Composition {
+
+    /** sets the volume */
     public static final int VOLUME = 127;
+
+    /** sets the channel */
     public static final int CHANNEL = 0;
+
+    /** sets the track index */
     public static final int TRACK_INDEX = 0;
 
-
     private MidiPlayer player = new MidiPlayer(100, 60);
-
 
     /**
      * This will translate a rectangle into a midi event
