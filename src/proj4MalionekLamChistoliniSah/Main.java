@@ -1,4 +1,3 @@
-
 /**
  * File: Main.java
  * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
@@ -6,7 +5,6 @@
  * Project: 4
  * Date: October 11, 2016
  */
-
 
 package proj4MalionekLamChistoliniSah;
 

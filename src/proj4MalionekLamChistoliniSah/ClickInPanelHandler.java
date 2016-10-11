@@ -1,10 +1,14 @@
-
-
+/**
+ * File: ClickInPanelHandler.java
+ * Names: Victoria Chistolini, Tiffany Lam, Joseph Malionek, Vivek Sah
+ * Class: CS361
+ * Project: 4
+ * Date: October 11, 2016
+ */
 
 package proj4MalionekLamChistoliniSah;
 
 import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Rectangle;
 
 /**
  * Created by joseph on 10/9/16.
