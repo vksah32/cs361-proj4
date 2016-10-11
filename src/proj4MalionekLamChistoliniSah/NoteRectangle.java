@@ -15,7 +15,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
- * Holds the information of the rectangle of a note
+ * Represents a musical note in the gui interface
  */
 public class NoteRectangle extends Rectangle {
 

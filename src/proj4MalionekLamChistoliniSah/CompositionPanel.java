@@ -90,7 +90,6 @@ public class CompositionPanel extends Pane {
             }
         }
     }
-    
 
     /**
      * removes the selected rectangles
