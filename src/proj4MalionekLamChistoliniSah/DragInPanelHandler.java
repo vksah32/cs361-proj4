@@ -16,18 +16,23 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-/**
- * Created by joseph on 10/9/16.
- */
 public class DragInPanelHandler {
 
+    /** The panel that this handler actively edits and listens to */
     private CompositionPanel panelToEdit;
+    /**The rectangle which appears when you select a group of notes*/
     private Rectangle selectionRectangle;
+    /**The x coordinate at which the drag event originated*/
     private double startX;
+    /**The y coordinate at which the drag event originated*/
     private double startY;
+    /**Whether or not the control key is held down*/
     private boolean metaDown;
-    
 
+    /** Creates a new DragInPaneHandler
+     *
+     * @param panelToEdit The panel which this handler edits
+     */
     public DragInPanelHandler(CompositionPanel panelToEdit){
         this.panelToEdit = panelToEdit;
         this.selectionRectangle = new Rectangle();
@@ -36,6 +41,10 @@ public class DragInPanelHandler {
         this.panelToEdit.getChildren().add(this.selectionRectangle);
     }
 
+    /**
+     * Handles when the mouse is pushed down
+     * @param event the event associated with the mouse push down
+     */
     public void handleMousePressed(MouseEvent event){
         this.startX = event.getX();
         this.startY = event.getY();
@@ -44,6 +53,10 @@ public class DragInPanelHandler {
         this.metaDown = event.isShortcutDown();
     }
 
+    /**
+     * Handles when the mosue is dragged
+     * @param event The even associated with this mouse drag
+     */
     public void handleDragged(MouseEvent event) {
         this.selectionRectangle.setVisible(true);
         if(!this.metaDown){
@@ -82,6 +95,10 @@ public class DragInPanelHandler {
         }
     }
 
+    /** handles when the mouse is released
+     *
+     * @param event The mouse event associated with this mouse release
+     */
     public void handleDragReleased(MouseEvent event) {
         this.selectionRectangle.setVisible(false);
     }
