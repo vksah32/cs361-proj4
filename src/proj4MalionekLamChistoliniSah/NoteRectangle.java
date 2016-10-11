@@ -15,17 +15,35 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 /**
- * Created by joseph on 10/9/16.
+ * Holds the information of the rectangle of a note
  */
 public class NoteRectangle extends Rectangle {
+
+    /** the instrument of the note */
     private int instrument;
+
+    /** keeps track of whether the rectangle is selected */
     private boolean selected;
 
-    public NoteRectangle(double x, double y, double width, double height, String instrument){
-        super(x,y,width,height);
+    /**
+     * The constructor of the NoteRectangle
+     * @param x
+     * @param y
+     * @param width
+     * @param height
+     * @param instrument
+     */
+    public NoteRectangle(double x, double y,
+                         double width, double height,
+                         String instrument) {
+        super(x, y, width, height);
         this.setInstrument(instrument);
     }
 
+    /**
+     * sets the rectangles color and instrument number given the instrument
+     * @param instrument
+     */
     public void setInstrument(String instrument){
         if (instrument.equals("Harpsichord")){
             this.setFill(Color.GREEN);
@@ -60,15 +78,26 @@ public class NoteRectangle extends Rectangle {
         }
     }
 
-
+    /**
+     * gets the instrument
+     * @return the instrument
+     */
     public int getInstrument(){
         return this.instrument;
     }
 
+    /**
+     * returns a boolean value to see if the rectangle is selected
+     * @return true if the rectangle is selected, false otherwise
+     */
     public boolean isSelected() {
         return this.selected;
     }
 
+    /**
+     * sets the selection of the rectangle
+     * @param selected
+     */
     public void setSelected(boolean selected){
         if(selected){
             this.setStrokeWidth(3);

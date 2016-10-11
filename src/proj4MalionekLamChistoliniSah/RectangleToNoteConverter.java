@@ -14,10 +14,15 @@ package proj4MalionekLamChistoliniSah;
 import java.util.ArrayList;
 
 /**
- * Created by joseph on 10/10/16.
+ * Converts a NoteRectangle to a Note
  */
 public class RectangleToNoteConverter {
 
+    /**
+     * converts a NoteRectangle to a Note
+     * @param rectangle
+     * @return a note
+     */
     public static Note convertRectangle(NoteRectangle rectangle){
         int duration = (int)rectangle.getWidth();
         int startTick = (int)rectangle.getX();
@@ -27,6 +32,11 @@ public class RectangleToNoteConverter {
         return note;
     }
 
+    /**
+     * converts multiple NoteRectangles to Notes
+     * @param rectangles
+     * @return an ArrayList of Notes
+     */
     public static ArrayList<Note> convertRectangles(ArrayList<NoteRectangle> rectangles){
         ArrayList<Note> notes = new ArrayList<>();
         for(NoteRectangle rectangle: rectangles){
