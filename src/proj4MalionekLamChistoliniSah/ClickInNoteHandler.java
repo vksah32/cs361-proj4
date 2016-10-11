@@ -27,7 +27,7 @@ public class ClickInNoteHandler implements EventHandler<MouseEvent> {
      * @param compositionPanel
      */
     public ClickInNoteHandler(CompositionPanel compositionPanel) {
-     this.compositionPanel = compositionPanel;
+        this.compositionPanel = compositionPanel;
     }
 
     /**
