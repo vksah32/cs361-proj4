@@ -26,3 +26,10 @@
     -fx-stroke: lightgray;
     -fx-stroke-width: 1
 }
+
+#selectionRectangle {
+     -fx-stroke: gold;
+     -fx-fill: null;
+
+
+}
